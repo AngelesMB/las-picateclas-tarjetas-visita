@@ -1,0 +1,48 @@
+.information {
+    margin: 95px 35px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information img {
+    margin: 40px 0;
+}
+
+.information-title {
+    font-family: $font-titles;
+    color: $dull-orange;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.information-subtitle {
+    color: $dark-green-blue;
+    font-size: 30px;
+    text-align: center;   
+}
+
+.call-to-action {
+    margin: 0 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-list {
+    display: flex;
+}
+
+.icon {
+    list-style: none;
+    padding: 20px
+}
+
+.icon span{
+    display:block;
+    text-align: center;
+}
+
+.start {
+    margin: 30px;
+}
