@@ -1,0 +1,22 @@
+.footer{
+    width: 100%;
+    height:110px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    &__small {
+    color:#6b6b6b;
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 0.5;
+    font-family: OpenSans;
+    }
+    &__div{
+        width: 103px;
+        height: 40px;
+        &--img{
+            width: 100%;
+        }
+    }
+}
