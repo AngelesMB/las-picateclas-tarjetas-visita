@@ -4,6 +4,47 @@
 }
 
 .form {
-  background-color: rgb(214, 171, 118);
-  height: 50vh;
+  &__fill {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    border: none;
+
+    &--sect {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &--div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      line-height: 40px;
+    }
+
+    &--prftext {
+    }
+  }
+
+  &__btnimg {
+    background-color: chocolate;
+    border: none;
+    border-radius: 3px;
+    height: 30px;
+    width: 140px;
+    color: white;
+  }
+}
+
+.far {
+  color: orange;
+  padding: 20px;
+}
+
+.fas {
+  color: gray;
+  justify-content: flex-end;
+  left: 200px;
 }

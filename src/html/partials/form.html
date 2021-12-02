@@ -1,63 +1,73 @@
 <main>
-  <section class="preview">preview</section>
+    <section class="preview">preview</section>
+  
+    <form class="form" action="">
+      <fieldset class="form__design">
+        <h2 class="form__design--title">Diseña</h2>
+        <i></i>
+        <div>
+          <label for="">Colores</label>
+          <ul>
+            <li class="first-color">
+              <input checked="true" id="palette" type="radio" />
+              <div class="colorOne">uno</div>
+              <div class="colorTwo">dos</div>
+              <div class="colorThree">tres</div>
+            </li>
+  
+            <li class="second-color">
+              <input checked="true" id="palette" type="radio" />
+              <div class="colorOne">cuatro</div>
+              <div class="colorTwo">cinco</div>
+              <div class="colorThree">seis</div>
+            </li>
+  
+            <li class="second-color">
+              <input checked="true" id="palette" type="radio" />
+              <div class="colorOne">siete</div>
+              <div class="colorTwo">ocho</div>
+              <div class="colorThree">nueve</div>
+            </li>
+          </ul>
+        </div>
+      </fieldset>
+  
+      <fieldset class="form__fill">
+        <div class="form__fill--sect">
+            <i class="far fa-keyboard"></i>
+            <h2 class="form__fill--title">
+                Rellena
+            </h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="form__fill--div">
+          <label for="name">Nombre completo</label>
+          <input
+            class="contact__form--name"
+            placeholder="Ej: Sally Jill"
+            id="name"
+            type="text"
+            name="fill_name"
+            required="obligatorio"
+            />
 
-  <form class="form" action="">
-    <fieldset class="form__design">
-      <h2 class="form__design--title">Diseña</h2>
-      <i></i>
-      <div>
-        <label for="">Colores</label>
-        <ul>
-          <li class="first-color">
-            <input checked="true" id="palette" type="radio" />
-            <div class="colorOne">uno</div>
-            <div class="colorTwo">dos</div>
-            <div class="colorThree">tres</div>
-          </li>
-
-          <li class="second-color">
-            <input checked="true" id="palette" type="radio" />
-            <div class="colorOne">cuatro</div>
-            <div class="colorTwo">cinco</div>
-            <div class="colorThree">seis</div>
-          </li>
-
-          <li class="second-color">
-            <input checked="true" id="palette" type="radio" />
-            <div class="colorOne">siete</div>
-            <div class="colorTwo">ocho</div>
-            <div class="colorThree">nueve</div>
-          </li>
-        </ul>
-      </div>
-    </fieldset>
-
-    <fieldset class="form__fill">
-      <h2 class="form__fill--title">Rellena</h2>
-      <div>
-        <label for="phoneNumber">Nombre completo</label>
+        <label for="job">Puesto</label>
         <input
-          class="contact__form--item phoneNumber"
-          placeholder="Ej: 123456789"
-          id="phoneNumber"
-          type="tel"
-          name="phoneNumber"
-          pattern="^[6-7-9]{1}[0-9]{8}$"
-          title="Por favor, introduce un número de teléfono fijo o móvil de España "
+          class="contact__form--job"
+          placeholder="Ej: Front-end unicorn"
+          id="job"
+          type="text"
+          name="fill_job"
+          required="obligatorio"
         />
-        <label for="phoneNumber">Puesto</label>
-        <input
-          class="contact__form--item phoneNumber"
-          placeholder="Ej: 123456789"
-          id="phoneNumber"
-          type="tel"
-          name="phoneNumber"
-          pattern="^[6-7-9]{1}[0-9]{8}$"
-          title="Por favor, introduce un número de teléfono fijo o móvil de España "
-        />
-        <label>Imagen de perfil</label>
 
-        <button>Añadir imagen</button>
+        
+        <label class="form__fill--prftext">Imagen de perfil</label>
+
+        <button class="form__btnimg">Añadir imagen</button>
+        <div class="square"></div>
+
+
         <label for="phoneNumber">Email</label>
         <input
           class="contact__form--item phoneNumber"

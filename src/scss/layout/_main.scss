@@ -1,0 +1,46 @@
+.main {
+  height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__icons {
+    height: 74px;
+    width: 268px;
+    margin: 0 0 39px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1.6px rgba(225, 115, 52, 0.21);
+    border-radius: 4px;
+    // opacity: 0.21;
+    color: #54585a;
+    font-size: 12.8px;
+    padding: 15px 20px 10px 20px;
+    &Group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &Item {
+      color: #e17334;
+      font-size: 22.4px;
+    }
+  }
+  &__button {
+    background-color: #438792;
+    height: 42px;
+    width: 129px;
+    border-radius: 21px;
+    &:hover {
+      cursor: pointer;
+    }
+    &Text {
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+}
