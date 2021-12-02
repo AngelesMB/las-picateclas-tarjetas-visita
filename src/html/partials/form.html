@@ -70,17 +70,18 @@
 
         <label for="phoneNumber">Email</label>
         <input
-          class="contact__form--item phoneNumber"
-          placeholder="Ej: 123456789"
-          id="phoneNumber"
-          type="tel"
-          name="phoneNumber"
-          pattern="^[6-7-9]{1}[0-9]{8}$"
-          title="Por favor, introduce un número de teléfono fijo o móvil de España "
+          class="contact__form--mail"
+          placeholder="Ej: nombre.apellidos@mail.com"
+          id="mailAddress"
+          type="mail"
+          name="mail"
+          title="Por favor, introduzca un email válido"
+          pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[.][a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"required
+          
         />
         <label for="phoneNumber">Teléfono</label>
         <input
-          class="contact__form--item phoneNumber"
+          class="contact__form--phone"
           placeholder="Ej: 123456789"
           id="phoneNumber"
           type="tel"
@@ -88,25 +89,25 @@
           pattern="^[6-7-9]{1}[0-9]{8}$"
           title="Por favor, introduce un número de teléfono fijo o móvil de España "
         />
-        <label for="phoneNumber">Linkedin</label>
+        <label for="linkedin">Linkedin</label>
         <input
-          class="contact__form--item phoneNumber"
-          placeholder="Ej: 123456789"
-          id="phoneNumber"
-          type="tel"
-          name="phoneNumber"
-          pattern="^[6-7-9]{1}[0-9]{8}$"
-          title="Por favor, introduce un número de teléfono fijo o móvil de España "
+          class="contact__form--linkedin"
+          placeholder="Ej: Ada Lovelace"
+          id="linkedin"
+          type="linkedin"
+          name="linkedin"
+          pattern="^\b([A-ZÀ-ÿ][-,a-z ']+[ ]*)+$"
+          title="Por favor, introduzca su cuenta de linkedin"
         />
         <label for="phoneNumber">Github</label>
         <input
-          class="contact__form--item phoneNumber"
-          placeholder="Ej: 123456789"
-          id="phoneNumber"
-          type="tel"
-          name="phoneNumber"
-          pattern="^[6-7-9]{1}[0-9]{8}$"
-          title="Por favor, introduce un número de teléfono fijo o móvil de España "
+        class="contact__form--github"
+        placeholder="Ej: Ada Lovelace"
+        id="github"
+        type="github"
+        name="github"
+        pattern="^\b([A-ZÀ-ÿ][-,a-z ']+[ ]*)+$"
+        title="Por favor, introduzca su cuenta de Github"
         />
       </div>
     </fieldset>
