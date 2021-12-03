@@ -1,11 +1,17 @@
 .header {
   background-color: #f5f5f5;
-  height: 20vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  padding-top: 95px;
+  &__logo {
+    width: 250px;
+    height: 63px;
+  }
 }
+
 
 .extraClass {
   &.header {
@@ -15,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0px;
   }
 
   & .header__logo {
