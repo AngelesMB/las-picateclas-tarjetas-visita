@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   &__button {
     display: flex;
     width: 75px;
@@ -44,7 +45,6 @@
   &__fill {
     display: flex;
     flex-direction: column;
-    height: 70vh;
     border: none;
 
     &--sect {
@@ -54,12 +54,39 @@
       align-items: center;
     }
 
+    &--title {
+      font-family: $font-main;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: $gunmetal;
+    }
+
     &--div {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      justify-content: flex-start;
       flex-direction: column;
-      line-height: 40px;
+
+      margin-left: 20px;
+
+      & label {
+        margin-bottom: 10px;
+        margin-top: 20px;
+        font-family: $font-main;
+        font-size: 14px;
+        color: $dark-green-blue;
+      }
+
+      & input {
+        width: 95%;
+        height: 30px;
+        border: #a2deaf 1px solid;
+      }
     }
+  }
+
+  &__image {
+    display: flex;
   }
 
   &__btnimg {
@@ -70,15 +97,22 @@
     width: 140px;
     color: white;
   }
+
+  &__square {
+    width: 30px;
+    height: 30px;
+    border: #a2deaf 1px solid;
+    margin-left: 20px;
+  }
 }
 
 .far {
   color: orange;
   padding: 20px;
+  padding-right: 10px;
 }
 
 .fas {
   color: gray;
-  justify-content: flex-end;
-  left: 200px;
+  margin-left: 240px;
 }
