@@ -1,3 +1,9 @@
+.preview-main {
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
 .preview {
   background: linear-gradient(#bfcdd0, #dde9ed);
   height: 457px;
@@ -5,6 +11,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  
+
+  @media (min-width: 768px) {
+    padding-bottom: 267px;
+    height: 826px;
+    margin-right: 40px;
+    margin-left: 30px;
+    width: 329px;
+  }
 
   &__button {
     display: flex;
@@ -17,18 +33,60 @@
     color: #54585a;
     font-family: $font-main;
     font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 12px;
+    transform: translateX(-80px);
+
+    @media (min-width: 768px) {
+      margin-top: 180px;
+    }
+
+    .far {
+      padding: 5px 8px 5px 10px;
+      color: #54585a;
+    }
   }
   &__card {
+
     width: 240px;
     height: 329px;
-    border: solid 1px;
+    margin-top: 20px;
+    
     border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 
     &--name {
       background-color: white;
+      padding-top:21px;
+      height: 75px;
+      padding-left: 15px;
+
+      .name {
+        
+        height: 20px;
+        width: 206px;
+        display: inline;
+        color: $dark-green-blue;
+        font-size: 18px;        
+        font-family: $font-title-preview;
+        font-weight: bold;
+        padding:0px;
+      }
+      .profession {
+              
+        color: $gunmetal;
+        font-family: $font-title-preview;
+        font-size: 16px;
+        padding: 4px 0px;
+        
+        height: 20px;
+        width: 168px;
+      }
     }
     &--img {
-      background-image: url("https://www.placecage.com/200/300");
+      background-image: url("https://www.placecage.com/g/200/300");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -37,6 +95,7 @@
     }
     &--icons {
       background-color: white;
+      height: 54px;
     }
   }
 }
@@ -46,6 +105,7 @@
     display: flex;
     flex-direction: column;
     border: none;
+    padding-bottom: 30px;
 
     &--sect {
       width: 100%;
@@ -59,6 +119,8 @@
       font-size: 18px;
       text-transform: uppercase;
       color: $gunmetal;
+      font-weight: 600;
+     
     }
 
     &--div {
