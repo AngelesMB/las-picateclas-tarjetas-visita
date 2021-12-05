@@ -4,6 +4,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  &__information{
+    margin: 35px 35px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &Title {
+      font-family: $font-titles;
+      color: $dull-orange;
+      font-size: 19.2px;
+      font-weight: bold;
+    }
+    &Subtitle {
+      color: $dark-green-blue;
+      font-size: 12.8px;
+      text-align: center;
+    }
+  }
   &__icons {
     height: 74px;
     width: 268px;
@@ -49,53 +66,3 @@
     }
   }
 }
-
-.information {
-  margin: 35px 35px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-// .information img {
-//   margin: 40px 0;
-// }
-
-.information-title {
-  font-family: $font-titles;
-  color: $dull-orange;
-  font-size: 19.2px;
-  font-weight: bold;
-}
-
-.information-subtitle {
-  color: $dark-green-blue;
-  font-size: 12.8px;
-  text-align: center;
-  
-}
-
-// .call-to-action {
-//   margin: 0 35px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// .icon-list {
-//   display: flex;
-// }
-
-// .icon {
-//   list-style: none;
-//   padding: 20px;
-// }
-
-// .icon span {
-//   display: block;
-//   text-align: center;
-// }
-
-// .start {
-//   margin: 30px;
-// }
