@@ -12,7 +12,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  
 
   @media (min-width: 768px) {
     padding-bottom: 267px;
@@ -49,38 +48,35 @@
     }
   }
   &__card {
-
     width: 240px;
     height: 329px;
     margin-top: 20px;
-    
+
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 
     &--name {
       background-color: white;
-      padding-top:21px;
+      padding-top: 21px;
       height: 75px;
       padding-left: 15px;
 
       .name {
-        
         height: 20px;
         width: 206px;
         display: inline;
         color: $dark-green-blue;
-        font-size: 18px;        
+        font-size: 18px;
         font-family: $font-title-preview;
         font-weight: bold;
-        padding:0px;
+        padding: 0px;
       }
       .profession {
-              
         color: $gunmetal;
         font-family: $font-title-preview;
         font-size: 16px;
         padding: 4px 0px;
-        
+
         height: 20px;
         width: 168px;
       }
@@ -101,26 +97,97 @@
 }
 
 .form {
-  &__fill {
+  &__fill,
+  &__share {
     display: flex;
     flex-direction: column;
     border: none;
-    padding-bottom: 30px;
+    padding: 0 20px 30px;
+    width: 100%;
 
     &--sect {
-      width: 100%;
+      width: 90%;
       display: flex;
       flex-direction: row;
       align-items: center;
+      & i.far {
+        color: $dull-orange;
+        padding: 20px;
+        padding-right: 10px;
+        font-size: 22px;
+      }
+      & i.fas {
+        color: $gunmetal;
+        position: absolute;
+        right: 20px;
+      }
     }
 
     &--title {
       font-family: $font-main;
-      font-size: 18px;
+      font-size: 22px;
       text-transform: uppercase;
       color: $gunmetal;
       font-weight: 600;
-     
+
+      display: inline;
+    }
+
+    &--button {
+      padding: 25px;
+      text-align: center;
+      width: 100%;
+      & button {
+        background-color: $dull-orange;
+        border: none;
+        border-radius: 12px;
+        padding: 17px 25px;
+        color: white;
+        &:hover {
+          cursor: pointer;
+        }
+        & i.far {
+          color: white;
+          padding: 0;
+          padding-right: 10px;
+          font-size: 22px;
+        }
+        & span {
+          text-transform: uppercase;
+          font-size: 20px;
+        }
+      }
+    }
+
+    &--created {
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & h4 {
+        color: $gunmetal;
+        font-size: 24px;
+        margin-bottom: 9px;
+      }
+      & a {
+        color: $dull-orange;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      & a.twitter {
+        margin: 20px;
+        padding: 17px 25px;
+        color: white;
+        background-color: #00a0f5;
+        border-radius: 5px;
+        font-size: 20px;
+        text-decoration: none;
+        & i.fab {
+          margin-right: 10px;
+        }
+      }
     }
 
     &--div {
@@ -128,7 +195,7 @@
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
-
+      width: 100%;
       margin-left: 20px;
 
       & label {
@@ -168,13 +235,13 @@
   }
 }
 
-.far {
-  color: orange;
-  padding: 20px;
-  padding-right: 10px;
-}
+// .far {
+//   color: orange;
+//   padding: 20px;
+// }
 
-.fas {
-  color: gray;
-  margin-left: 240px;
-}
+// .fas {
+//   color: gray;
+//   justify-content: flex-end;
+//   left: 200px;
+// }
