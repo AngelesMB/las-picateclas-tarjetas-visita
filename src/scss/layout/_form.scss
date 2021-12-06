@@ -88,6 +88,7 @@
         padding: 17px 25px;
         color: white;
         &:hover {
+          cursor: pointer;
         }
         & i.far {
           color: white;
@@ -98,6 +99,16 @@
         & span {
           text-transform: uppercase;
           font-size: 20px;
+        }
+      }
+      & button.unabled {
+        background-color: $white;
+        border: none;
+        border-radius: 12px;
+        padding: 17px 25px;
+        color: white;
+        &:hover {
+          cursor: auto;
         }
       }
     }
