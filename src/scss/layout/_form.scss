@@ -92,6 +92,24 @@
     &--icons {
       background-color: white;
       height: 54px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+
+    .card-icons {
+      border: #a2deaf 2px solid;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+
+      & i {
+        color: $dark-green-blue;
+      }
     }
   }
 }

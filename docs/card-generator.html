@@ -13,71 +13,82 @@
     <header class="header extraClass" >
         <img class="header__logo" src="./assets/images/logo-awesome-profile-cards.svg" alt="logo-awesome-cards">
     </header>
-    <main>
+    <main class="preview-main"> 
         <section class="preview">
           <button class="preview__button"><span><i class="far fa-trash-alt"></i></span>Reset</button>
           <div class="preview__background">
             <div class="preview__card">
               <div class="preview__card--name">
-                <h3>Nico Cage</h3>
-                <h4>Actor</h4>
+                <h3 class="preview__card--name name">Nico Cage</h3>
+                <h4 class=" preview__card--name profession">Actor</h4>
             </div>
               <div class="preview__card--img"></div>
-              <div class="preview__card--icons">ICONOS</div>
+              <div class="preview__card--icons">
+                <div class="card-icons">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="card-icons">
+                  <i class="far fa-envelope"></i>
+                </div>
+                <div class="card-icons">
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="card-icons">
+                  <i class="fab fa-github-alt"></i>
+                </div>
+              </div>
             </div>
           </div>
-              
-        </section>
-      
-        <form class="form" action="">
-          <fieldset class="form__design">
-            <h2 class="form__design--title">Diseña</h2>
-            <i></i>
-            <div>
-              <label for="">Colores</label>
-              <ul>
-                <li class="first-color">
-                  <input checked="true" id="palette" type="radio" />
-                  <div class="colorOne">uno</div>
-                  <div class="colorTwo">dos</div>
-                  <div class="colorThree">tres</div>
-                </li>
-      
-                <li class="second-color">
-                  <input checked="true" id="palette" type="radio" />
-                  <div class="colorOne">cuatro</div>
-                  <div class="colorTwo">cinco</div>
-                  <div class="colorThree">seis</div>
-                </li>
-      
-                <li class="second-color">
-                  <input checked="true" id="palette" type="radio" />
-                  <div class="colorOne">siete</div>
-                  <div class="colorTwo">ocho</div>
-                  <div class="colorThree">nueve</div>
-                </li>
-              </ul>
-            </div>
-          </fieldset>
-      
-          <fieldset class="form__fill">
-            <div class="form__fill--sect">
-                <i class="far fa-keyboard"></i>
-                <h2 class="form__fill--title">
-                    Rellena
-                </h2>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="form__fill--div">
-              <label for="name">Nombre completo</label>
-              <input
-                class="contact__form--name"
-                placeholder="Ej: Sally Jill"
-                id="name"
-                type="text"
-                name="fill_name"
-                required="obligatorio"
-                />
+        </div>
+      </section>
+
+      <form class="form" action="">
+        <fieldset class="form__design">
+          <h2 class="form__design--title">Diseña</h2>
+          <i></i>
+          <div>
+            <label for="">Colores</label>
+            <ul>
+              <li class="first-color">
+                <input checked="true" id="palette" type="radio" />
+                <div class="colorOne">uno</div>
+                <div class="colorTwo">dos</div>
+                <div class="colorThree">tres</div>
+              </li>
+
+              <li class="second-color">
+                <input checked="true" id="palette" type="radio" />
+                <div class="colorOne">cuatro</div>
+                <div class="colorTwo">cinco</div>
+                <div class="colorThree">seis</div>
+              </li>
+
+              <li class="second-color">
+                <input checked="true" id="palette" type="radio" />
+                <div class="colorOne">siete</div>
+                <div class="colorTwo">ocho</div>
+                <div class="colorThree">nueve</div>
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+
+        <fieldset class="form__fill">
+          <div class="form__fill--sect">
+            <i class="far fa-keyboard"></i>
+            <h2 class="form__fill--title">Rellena</h2>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="form__fill--div">
+            <label for="name">Nombre completo</label>
+            <input
+              class="contact__form--name"
+              placeholder="Ej: Sally Jill"
+              id="name"
+              type="text"
+              name="fill_name"
+              required="obligatorio"
+            />
 
             <label for="job">Puesto</label>
             <input
@@ -89,14 +100,12 @@
               required="obligatorio"
             />
 
-            
             <label class="form__fill--prftext">Imagen de perfil</label>
 
             <div class="form__image">
               <button class="form__btnimg">Añadir imagen</button>
               <div class="form__square"></div>
             </div>
-
 
             <label for="phoneNumber">Email</label>
             <input
@@ -106,8 +115,8 @@
               type="mail"
               name="mail"
               title="Por favor, introduzca un email válido"
-              pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[.][a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"required
-              
+              pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[.][a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
+              required
             />
             <label for="phoneNumber">Teléfono</label>
             <input
@@ -122,7 +131,7 @@
             <label for="linkedin">Linkedin</label>
             <input
               class="contact__form--linkedin"
-              placeholder="Ej: Ada Lovelace"
+              placeholder="Ej: linkedin.com/in/ada.lovelace"
               id="linkedin"
               type="linkedin"
               name="linkedin"
@@ -132,7 +141,7 @@
             <label for="phoneNumber">Github</label>
             <input
             class="contact__form--github"
-            placeholder="Ej: Ada Lovelace"
+            placeholder="Ej: @Ada-Lovelace"
             id="github"
             type="github"
             name="github"
@@ -142,14 +151,24 @@
           </div>
         </fieldset>
         <fieldset class="form__share">
-          <h2 class="form__share--title">Comparte</h2>
-          <div>
-            <button>Crear tarjeta</button>
+          <div class="form__share--sect">
+            <i class="far fa-share-alt"></i>
+            <h2 class="form__share--title">Comparte</h2>
+            <i class="fas fa-chevron-down"></i>
           </div>
-          <div>
+          <div class="form__share--button">
+            <button href="#" id="button-card">
+              <i class="far fa-address-card"></i>
+              <span>Crear tarjeta</span>
+            </button>
+          </div>
+          <div class="form__share--created">
             <h4>La tarjeta ha sido creada:</h4>
-            <a href="">enlace</a>
-            <button>Compartir en twitter</button>
+            <a href="#">https://awesome-profile-card.com?id=A456DF0001</a>
+            <a href="#" class="twitter" target="_blank">
+              <i class="fab fa-twitter"></i>
+              Compartir en twitter
+            </a>
           </div>
         </fieldset>
       </form>
@@ -162,7 +181,7 @@
         </div>
     </section> 
 
-
+    <script type="text/javascript" src="./assets/js/main.js"></script>
     
 </body>
 </html>
