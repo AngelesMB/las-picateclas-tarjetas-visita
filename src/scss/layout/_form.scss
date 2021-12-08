@@ -298,17 +298,18 @@
       & a {
         color: $dull-orange;
         text-decoration: none;
+        text-align: center;
         &:hover {
           text-decoration: underline;
         }
       }
       & a.twitter {
-        margin: 20px;
-        padding: 17px 25px;
-        color: white;
+        margin: 15px;
+        padding: 8px 15px;
+        color: $white-two;
         background-color: #00a0f5;
         border-radius: 5px;
-        font-size: 20px;
+        font-size: 18px;
         text-decoration: none;
         & i.fab {
           margin-right: 10px;
@@ -371,3 +372,7 @@
 //   justify-content: flex-end;
 //   left: 200px;
 // }
+
+.hidden {
+  display: none;
+}
