@@ -1,46 +1,67 @@
-<main>
-  <section class="preview">
-    <button class="preview__button">
-      <span><i class="far fa-trash-alt"></i></span>Reset
-    </button>
-    <div class="preview__background">
-      <div class="preview__card">
-        <div class="preview__card--name">
-          <h3>Nico Cage</h3>
-          <h4>Actor</h4>
+<main class="preview-main"> 
+    <section class="preview">
+      <button class="preview__button"><span><i class="far fa-trash-alt"></i></span>Reset</button>
+      <div class="preview__background">
+        <div class="preview__card">
+          <div class="preview__card--name">
+            <h3 class="preview__card--name name">Nico Cage</h3>
+            <h4 class=" preview__card--name profession">Actor</h4>
         </div>
-        <div class="preview__card--img"></div>
-        <div class="preview__card--icons">ICONOS</div>
+          <div class="preview__card--img"></div>
+          <div class="preview__card--icons">
+            <div class="card-icons">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="card-icons">
+              <i class="far fa-envelope"></i>
+            </div>
+            <div class="card-icons">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="card-icons">
+              <i class="fab fa-github-alt"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <form class="form" action="">
     <fieldset class="form__design">
-      <h2 class="form__design--title">Diseña</h2>
-      <i></i>
-      <div>
-        <label for="">Colores</label>
-        <ul>
-          <li class="first-color">
-            <input checked="true" id="palette" type="radio" />
-            <div class="colorOne">uno</div>
-            <div class="colorTwo">dos</div>
-            <div class="colorThree">tres</div>
+      <div class="form__design--sect">
+        <i class="far fa-object-ungroup"></i>
+        <h2 class="form__design--title">Diseña</h2>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="form__design--container">
+        <label for="colores" class="form__design--subtitle">Colores</label>
+        <ul class="form__design--list">
+          <li class="list__palette first__color">
+            <input checked="true" id="palette" type="radio" class="list__radio"/>
+            <div class="colorOne"></div>
+            <div class="colorTwo"></div>
+            <div class="colorThree"></div>
           </li>
 
-          <li class="second-color">
-            <input checked="true" id="palette" type="radio" />
-            <div class="colorOne">cuatro</div>
-            <div class="colorTwo">cinco</div>
-            <div class="colorThree">seis</div>
+          <li class="list__palette second__color">
+            <input checked="true" id="palette" type="radio" class="list__radio"/>
+            <div class="colorOne"></div>
+            <div class="colorTwo"></div>
+            <div class="colorThree"></div>
           </li>
 
-          <li class="second-color">
-            <input checked="true" id="palette" type="radio" />
-            <div class="colorOne">siete</div>
-            <div class="colorTwo">ocho</div>
-            <div class="colorThree">nueve</div>
+          <li class="list__palette third__color">
+            <input checked="true" id="palette" type="radio" class="list__radio"/>
+            <div class="colorOne"></div>
+            <div class="colorTwo"></div>
+            <div class="colorThree"></div>
+          </li>
+          <li class="list__palette fourth__color">
+            <input checked="true" id="palette" type="radio" class="list__radio"/>
+            <div class="colorOne"></div>
+            <div class="colorTwo"></div>
+            <div class="colorThree"></div>
           </li>
         </ul>
       </div>
@@ -104,7 +125,7 @@
         <label for="linkedin">Linkedin</label>
         <input
           class="contact__form--linkedin"
-          placeholder="Ej: Ada Lovelace"
+          placeholder="Ej: linkedin.com/in/ada.lovelace"
           id="linkedin"
           type="linkedin"
           name="linkedin"
@@ -113,13 +134,13 @@
         />
         <label for="phoneNumber">Github</label>
         <input
-          class="contact__form--github"
-          placeholder="Ej: Ada Lovelace"
-          id="github"
-          type="github"
-          name="github"
-          pattern="^\b([A-ZÀ-ÿ][-,a-z ']+[ ]*)+$"
-          title="Por favor, introduzca su cuenta de Github"
+        class="contact__form--github"
+        placeholder="Ej: @Ada-Lovelace"
+        id="github"
+        type="github"
+        name="github"
+        pattern="^\b([A-ZÀ-ÿ][-,a-z ']+[ ]*)+$"
+        title="Por favor, introduzca su cuenta de Github"
         />
       </div>
     </fieldset>

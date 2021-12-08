@@ -1,1 +1,1 @@
-"use strict";console.log(">> Ready :)");
+"use strict";console.log(">> Ready :)");const cardButton=document.querySelector("#button-card");function unabling(){cardButton.classList.add("unabled")}cardButton.addEventListener("click",unabling);
