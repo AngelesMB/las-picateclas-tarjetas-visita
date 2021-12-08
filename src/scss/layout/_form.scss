@@ -115,11 +115,110 @@
 }
 
 .form {
+  // fieldset completo diseña
+  &__design {
+    // pruebas media queries
+    @include tablet {
+      background-color: aquamarine;
+    }
+    @include desktop {
+      background-color: rosybrown;
+    }
+    // subtítulo colores
+    &--subtitle {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: $font-main;
+      color: $gunmetal;
+      margin-left: 30px;
+    }
+    // contenedor subtítulo + paletas
+    &--container {
+      display: flex;
+      justify-content: space-between;
+    }
+    // lista de paletas
+    &--list {
+      list-style-type: none;
+    }
+    // cada cubo de color
+    & .colorOne,
+    .colorTwo,
+    .colorThree {
+      display: inline-block;
+      height: 25px;
+      width: 30px;
+    }
+    // bloque de cubos de colores, todos
+    .list {
+      &__palette {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      &__radio {
+        margin-right: 10px;
+        transform: scale(1.4) translateY(30%);
+      }
+    }
+    // bloque color 1
+    .first__color {
+      & .colorOne {
+        background-color: $dark-green-blue;
+      }
+      & .colorTwo {
+        background-color: $dirty-blue;
+      }
+      & .colorThree {
+        background-color: $hospital-green;
+      }
+    }
+    // bloque color 2
+    .second__color {
+      & .colorOne {
+        background-color: #420101;
+      }
+      & .colorTwo {
+        background-color: #bd1010;
+      }
+      & .colorThree {
+        background-color: #e95626;
+      }
+    }
+    // bloque color 3
+    .third__color {
+      & .colorOne {
+        background-color: #3e5b65;
+      }
+      & .colorTwo {
+        background-color: #eab052;
+      }
+      & .colorThree {
+        background-color: #a0c0cf;
+      }
+    }
+    // bloque color 4
+    .fourth__color {
+      margin-bottom: 0px;
+      & .colorOne {
+        background-color: rgb(94, 15, 94);
+      }
+      & .colorTwo {
+        background-color: #31d8c6;
+      }
+      & .colorThree {
+        background-color: #b1eee8;
+      }
+    }
+  }
+  &__design,
   &__fill,
   &__share {
     display: flex;
     flex-direction: column;
-    border: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: $white-two 1.5px solid;
     padding: 0 20px 30px;
     width: 100%;
 
@@ -147,7 +246,6 @@
       text-transform: uppercase;
       color: $gunmetal;
       font-weight: 600;
-
       display: inline;
     }
 
