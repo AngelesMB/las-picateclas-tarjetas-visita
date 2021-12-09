@@ -27,3 +27,16 @@ $hospital-green: #a2deaf;
     @content;
   }
 }
+
+// mixin paleta colores
+@mixin palette($background-color1, $background-color2, $background-color3) {
+  & .colorOne {
+    background-color: $background-color1;
+  }
+  & .colorTwo {
+    background-color: $background-color2;
+  }
+  & .colorThree {
+    background-color: $background-color3;
+  }
+}

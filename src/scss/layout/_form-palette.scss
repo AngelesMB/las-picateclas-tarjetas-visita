@@ -1,0 +1,26 @@
+.first__color {
+  & .colorOne {
+    background-color: $dark-green-blue;
+  }
+  & .colorTwo {
+    background-color: $dirty-blue;
+  }
+  & .colorThree {
+    background-color: $hospital-green;
+  }
+}
+
+@mixin palette($background-color1, $background-color2, $background-color3) {
+  & .colorOne {
+    background-color: $background-color1;
+  }
+  & .colorTwo {
+    background-color: $background-color2;
+  }
+  & .colorThree {
+    background-color: $background-color3;
+  }
+}
+.first__color {
+  @include mixin($dark-green-blue, $dirty-blue, $hospital-green);
+}
