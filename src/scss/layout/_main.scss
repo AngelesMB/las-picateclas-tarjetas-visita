@@ -49,16 +49,19 @@
   // div botón comenzar
   &__button {
     margin: 38px 0 30px;
-    background-color: #438792;
+    background-color: $dirty-blue;
     height: 42px;
     width: 129px;
     border-radius: 21px;
     display: flex;
     align-items: center;
     justify-content: center;
-    // indicamos en hover que se puede pulsar
+    transition: all 0.5s linear;
+    // indicamos en hover que se puede pulsar y definimos transición
     &:hover {
       cursor: pointer;
+      background-color: #48a4b3;
+      transform: scale(1.05);
     }
     // texto del botón
     &Text {
