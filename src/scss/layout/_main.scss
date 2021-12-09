@@ -38,9 +38,6 @@
       width: 325px;
       font-size: 16px;
     }
-    @include desktop {
-      background-color: rosybrown;
-    }
     // cada icono + subtitulo
     &Group {
       display: flex;
@@ -52,12 +49,8 @@
     &Item {
       color: $dull-orange;
       font-size: 22.4px;
-      // pruebas media queries
       @include tablet {
         font-size: 28px;
-      }
-      @include desktop {
-        background-color: rosybrown;
       }
     }
   }
@@ -72,13 +65,9 @@
     align-items: center;
     justify-content: center;
     transition: all 0.5s linear;
-      // pruebas media queries
-      @include tablet {
-        margin: 190px 0 60px;
-      }
-      @include desktop {
-        background-color: rosybrown;
-      }
+    @include tablet {
+      margin: 190px 0 60px;
+    }
     // indicamos en hover que se puede pulsar y definimos transición
     &:hover {
       cursor: pointer;
