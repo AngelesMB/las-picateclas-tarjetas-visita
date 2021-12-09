@@ -227,7 +227,7 @@
         background-color: $dull-orange;
         border: none;
         border-radius: 12px;
-        padding: 17px 25px;
+        padding: 13px 20px;
         color: white;
         &:hover {
           cursor: pointer;
@@ -236,18 +236,18 @@
           color: white;
           padding: 0;
           padding-right: 10px;
-          font-size: 22px;
+          font-size: 20px;
         }
         & span {
           text-transform: uppercase;
-          font-size: 20px;
+          font-size: 18px;
         }
       }
       & button.unabled {
         background-color: $white;
         border: none;
         border-radius: 12px;
-        padding: 17px 25px;
+        padding: 13px 20px;
         color: white;
         &:hover {
           cursor: auto;
@@ -264,6 +264,7 @@
         color: $gunmetal;
         font-size: 24px;
         margin-bottom: 9px;
+        text-align: center;
       }
       & a {
         color: $dull-orange;
