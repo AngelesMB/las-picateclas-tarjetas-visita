@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Awesome profile-cards</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" >
     <link rel="shortcut icon" type="image/png" href="./assets/images/icons8-card-64.png">
     <link rel="stylesheet" href="./assets/css/main.css">
@@ -44,31 +49,42 @@
 
       <form class="form" action="">
         <fieldset class="form__design">
-          <h2 class="form__design--title">Diseña</h2>
-          <i></i>
-          <div>
-            <label for="">Colores</label>
-            <ul>
-              <li class="first-color">
-                <input checked="true" id="palette" type="radio" />
-                <div class="colorOne">uno</div>
-                <div class="colorTwo">dos</div>
-                <div class="colorThree">tres</div>
+          <div class="form__design--sect">
+            <i class="far fa-object-ungroup"></i>
+            <h2 class="form__design--title">Diseña</h2>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="form__design--container">
+            <label for="colores" class="form__design--subtitle">Colores</label>
+            <ul class="form__design--list">
+              <li class="list__palette first__color">
+                <input type="radio" id="palette" class="list__radio" checked/>
+                <div class="colorOne"></div>
+                <div class="colorTwo"></div>
+                <div class="colorThree"></div>
               </li>
 
-              <li class="second-color">
-                <input checked="true" id="palette" type="radio" />
-                <div class="colorOne">cuatro</div>
-                <div class="colorTwo">cinco</div>
-                <div class="colorThree">seis</div>
+              <li class="list__palette second__color">
+                <input type="radio" id="palette" class="list__radio" />
+                <div class="colorOne"></div>
+                <div class="colorTwo"></div>
+                <div class="colorThree"></div>
               </li>
 
-              <li class="second-color">
-                <input checked="true" id="palette" type="radio" />
-                <div class="colorOne">siete</div>
-                <div class="colorTwo">ocho</div>
-                <div class="colorThree">nueve</div>
+              <li class="list__palette third__color">
+                <input type="radio" id="palette" class="list__radio" />
+                <div class="colorOne"></div>
+                <div class="colorTwo"></div>
+                <div class="colorThree"></div>
               </li>
+
+              <li class="list__palette fourth__color">
+                <input type="radio" id="palette" class="list__radio" />
+                <div class="colorOne"></div>
+                <div class="colorTwo"></div>
+                <div class="colorThree"></div>
+              </li>
+
             </ul>
           </div>
         </fieldset>
@@ -152,7 +168,7 @@
         </fieldset>
         <fieldset class="form__share">
           <div class="form__share--sect">
-            <i class="far fa-share-alt"></i>
+            <i class="fa fa-share-alt"></i>
             <h2 class="form__share--title">Comparte</h2>
             <i class="fas fa-chevron-down"></i>
           </div>
@@ -162,7 +178,7 @@
               <span>Crear tarjeta</span>
             </button>
           </div>
-          <div class="form__share--created">
+          <div class="form__share--created hidden" id="share-card">
             <h4>La tarjeta ha sido creada:</h4>
             <a href="#">https://awesome-profile-card.com?id=A456DF0001</a>
             <a href="#" class="twitter" target="_blank">

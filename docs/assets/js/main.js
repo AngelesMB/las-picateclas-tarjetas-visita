@@ -1,1 +1,1 @@
-"use strict";console.log(">> Ready :)");const cardButton=document.querySelector("#button-card");function unabling(){cardButton.classList.add("unabled")}cardButton.addEventListener("click",unabling);
+"use strict";console.log(">> Ready :)");const cardButton=document.querySelector("#button-card"),shareDiv=document.querySelector("#share-card");function unabling(){cardButton.classList.add("unabled"),shareDiv.classList.remove("hidden")}cardButton.addEventListener("click",unabling);
