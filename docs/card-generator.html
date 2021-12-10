@@ -19,7 +19,7 @@
 </head>
 <body>
     <header class="header extraClass" >
-        <img class="header__logo" src="./assets/images/logo-awesome-profile-cards.svg" alt="logo-awesome-cards">
+      <a href= "https://adalab.es" target="_blank"> <img class="header__logo" src="./assets/images/logo-awesome-profile-cards.svg" alt="logo-awesome-cards"></a>
     </header>
     <main class="preview-main"> 
         <section class="preview">
@@ -51,38 +51,38 @@
       </section>
 
       <form class="form" action="">
-        <fieldset class="form__design">
-          <div class="form__design--sect">
+        <fieldset class="form__design form-js">
+          <div class="form__design--sect form-title-js">
             <i class="far fa-object-ungroup"></i>
             <h2 class="form__design--title">Diseña</h2>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-up js-arrow"></i>
           </div>
-          <div class="form__design--container">
+          <div class="form__design--container form-container-js">
             <label for="colores" class="form__design--subtitle">Colores</label>
             <ul class="form__design--list">
               <li class="list__palette first__color">
-                <input type="radio" id="palette" class="list__radio" checked/>
+                <input type="radio" id="palette" class="list__radio" name="check__palette" checked/>
                 <div class="colorOne"></div>
                 <div class="colorTwo"></div>
                 <div class="colorThree"></div>
               </li>
 
               <li class="list__palette second__color">
-                <input type="radio" id="palette" class="list__radio" />
+                <input type="radio" id="palette" class="list__radio" name="check__palette" />
                 <div class="colorOne"></div>
                 <div class="colorTwo"></div>
                 <div class="colorThree"></div>
               </li>
 
               <li class="list__palette third__color">
-                <input type="radio" id="palette" class="list__radio" />
+                <input type="radio" id="palette" class="list__radio" name="check__palette" />
                 <div class="colorOne"></div>
                 <div class="colorTwo"></div>
                 <div class="colorThree"></div>
               </li>
 
               <li class="list__palette fourth__color">
-                <input type="radio" id="palette" class="list__radio" />
+                <input type="radio" id="palette" class="list__radio" name="check__palette" />
                 <div class="colorOne"></div>
                 <div class="colorTwo"></div>
                 <div class="colorThree"></div>
@@ -92,13 +92,13 @@
           </div>
         </fieldset>
 
-        <fieldset class="form__fill">
-          <div class="form__fill--sect">
+        <fieldset class="form__fill form-js">
+          <div class="form__fill--sect form-title2-js">
             <i class="far fa-keyboard"></i>
             <h2 class="form__fill--title">Rellena</h2>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-up js-arrow"></i>
           </div>
-          <div class="form__fill--div">
+          <div class="form__fill--div form-container-js">
             <label for="name">Nombre completo</label>
             <input
               class="contact__form--name"
@@ -169,13 +169,13 @@
             />
           </div>
         </fieldset>
-        <fieldset class="form__share">
-          <div class="form__share--sect">
+        <fieldset class="form__share form-js">
+          <div class="form__share--sect form-title3-js">
             <i class="fa fa-share-alt"></i>
             <h2 class="form__share--title">Comparte</h2>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-up js-arrow"></i>
           </div>
-          <div class="form__share--button">
+          <div class="form__share--button form-container-js">
             <button href="#" id="button-card">
               <i class="far fa-address-card"></i>
               <span>Crear tarjeta</span>
