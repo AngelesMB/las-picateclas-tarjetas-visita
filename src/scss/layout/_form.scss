@@ -1,5 +1,5 @@
 .preview-main {
-  @media (min-width: 768px) {
+    @media (min-width: 768px) {
     display: flex;
     flex-direction: row-reverse;
   }
@@ -11,13 +11,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+ 
 
   @media (min-width: 768px) {
+    border-radius: 6px;
     padding-bottom: 267px;
+    width: 329px;
     height: 826px;
-    margin-right: 40px;
-    margin-left: 30px;
+    padding-right: 40px;
+    padding-left: 30px;
     width: 329px;
   }
 
@@ -115,6 +117,7 @@
 }
 
 .form {
+  width: 100%;
   // fieldset completo diseña
   &__design {
     // pruebas media queries
@@ -225,7 +228,7 @@
         background-color: $dull-orange;
         border: none;
         border-radius: 12px;
-        padding: 17px 25px;
+        padding: 13px 20px;
         color: white;
         &:hover {
           cursor: pointer;
@@ -234,18 +237,18 @@
           color: white;
           padding: 0;
           padding-right: 10px;
-          font-size: 22px;
+          font-size: 20px;
         }
         & span {
           text-transform: uppercase;
-          font-size: 20px;
+          font-size: 18px;
         }
       }
       & button.unabled {
         background-color: $white;
         border: none;
         border-radius: 12px;
-        padding: 17px 25px;
+        padding: 13px 20px;
         color: white;
         &:hover {
           cursor: auto;
@@ -262,6 +265,7 @@
         color: $gunmetal;
         font-size: 24px;
         margin-bottom: 9px;
+        text-align: center;
       }
       & a {
         color: $dull-orange;
