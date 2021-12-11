@@ -59,7 +59,6 @@
     width: 240px;
     height: 329px;
     margin-top: 20px;
-
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 
@@ -67,8 +66,6 @@
       background-color: white;
       padding-top: 21px;
       height: 75px;
-      padding-left: 15px;
-
       .name {
         height: 20px;
         width: 206px;
@@ -78,15 +75,18 @@
         font-family: $font-title-preview;
         font-weight: bold;
         padding: 0px;
+        border-left: 5px solid $dirty-blue;
+        padding-left: 15px;
       }
       .profession {
         color: $gunmetal;
         font-family: $font-title-preview;
         font-size: 16px;
         padding: 4px 0px;
-
         height: 20px;
         width: 168px;
+        border-left: 5px solid $dirty-blue;
+        padding-left: 15px;
       }
     }
     &--img {
