@@ -9,6 +9,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (min-width: 768px) {
+      margin: 35px 250px;
+    }
     &Title {
       font-family: $font-titles;
       color: $dull-orange;
@@ -57,6 +60,9 @@
     align-items: center;
     justify-content: center;
     transition: all 0.5s linear;
+    @media (min-width: 768px) {
+      margin: 120px 0 30px;
+    }
     // indicamos en hover que se puede pulsar y definimos transición
     &:hover {
       cursor: pointer;
