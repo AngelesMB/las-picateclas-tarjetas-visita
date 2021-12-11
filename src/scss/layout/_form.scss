@@ -1,5 +1,5 @@
 .preview-main {
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-direction: row-reverse;
   }
@@ -11,7 +11,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
 
   @media (min-width: 768px) {
     border-radius: 6px;
@@ -84,7 +83,7 @@
       }
     }
     &--img {
-      background-image: url("https://www.placecage.com/g/200/300");
+      background-image: url("https://www.placecage.com/gif/200/300");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -120,13 +119,6 @@
   width: 100%;
   // fieldset completo diseña
   &__design {
-    // pruebas media queries
-    @include tablet {
-      background-color: aquamarine;
-    }
-    @include desktop {
-      background-color: rosybrown;
-    }
     // subtítulo colores
     &--subtitle {
       text-transform: uppercase;
@@ -134,6 +126,9 @@
       font-family: $font-main;
       color: $gunmetal;
       margin-left: 30px;
+      @include tablet {
+        margin-left: 0;
+      }
     }
     // contenedor subtítulo + paletas
     &--container {
@@ -208,6 +203,9 @@
         color: $gunmetal;
         position: absolute;
         right: 20px;
+        @include tablet {
+          right: 0px;
+        }
       }
     }
 
