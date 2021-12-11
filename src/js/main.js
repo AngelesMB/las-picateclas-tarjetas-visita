@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // colapsar contneido formularios cuando tengamos otra opción abierta
 
@@ -8,59 +8,60 @@ const rellena = document.querySelector(".form-title2-js");
 const comparte = document.querySelector(".form-title3-js");
 
 // funciones collapsables del formulario y giro de flecha
-function handClickCollapsed (event){
-event.currentTarget.parentNode.classList.toggle("collapsed");
-const arrow = event.currentTarget.querySelector(".js-arrow");
-arrow.classList.toggle("js-arrow-down");
+function handClickCollapsed(event) {
+  event.currentTarget.parentNode.classList.toggle("collapsed");
+  const arrow = event.currentTarget.querySelector(".js-arrow");
+  arrow.classList.toggle("js-arrow-down");
 }
 
-// eventos para desplegar formularios 
+// eventos para desplegar formularios
 diseña.addEventListener("click", handClickCollapsed);
 rellena.addEventListener("click", handClickCollapsed);
 comparte.addEventListener("click", handClickCollapsed);
 
 // TARJETA DE PREVIEW
-const data = {}
-    data.inputName = document.querySelector('.contact__form--name');
-    data.inputJob = document.querySelector('.contact__form--job');
-    data.inputMail = document.querySelector('.contact__form--mail');
-    data.inputPhone = document.querySelector('.contact__form--phone');
-    data.inputLinkdin = document.querySelector('.contact__form--linkedin');
-
+const data = {};
+data.inputName = document.querySelector(".contact__form--name");
+data.inputJob = document.querySelector(".contact__form--job");
+data.inputMail = document.querySelector(".contact__form--mail");
+data.inputPhone = document.querySelector(".contact__form--phone");
+data.inputLinkdin = document.querySelector(".contact__form--linkedin");
 
 //constantes tarjeta preview
-const nameTitle = document.querySelector('.name');
-const profession = document.querySelector('.profession');
+const nameTitle = document.querySelector(".name");
+const profession = document.querySelector(".profession");
+const emailLink = document.querySelector(".js-email");
 
+// función recoge nombre y profesión
+function generatePreviewCard() {
+  //   if (data.inputName.value === "" || data.inputJob.value === "") {
+  //     nameTitle.innerHTML = "Nombre Apellidos";
+  //     profession.innerHTML = "Profesion";
+  //   }
+  nameTitle.innerHTML = data.inputName.value;
+  profession.innerHTML = data.inputJob.value;
+}
 
-function generatePreviewCard (){
-    // if (data.inputName.value === undefined || data.inputJob.value === undefined){
-    // nameTitle.innerHTML = 'Nombre Apellidos';
-    // profession.innerHTML = 'Profesion';
-    // }
+// función recoge email
+function handleEmail() {
+  emailLink.href = `mailto:${data.inputMail.value}`;
+  console.log(data.inputMail.value);
+  console.log(emailLink.href);
+}
 
-    nameTitle.innerHTML = data.inputName.value;
-    profession.innerHTML = data.inputJob.value;
-};
-
-data.inputName.addEventListener('keyup', generatePreviewCard);
-data.inputJob.addEventListener('keyup', generatePreviewCard);
+data.inputName.addEventListener("keyup", generatePreviewCard);
+data.inputJob.addEventListener("keyup", generatePreviewCard);
+data.inputMail.addEventListener("change", handleEmail);
 
 // inhablitar botón cuando se ha clicado
 // y mostrar div de compartir tarjeta cuando se haya creado
 
-const cardButton = document.querySelector('#button-card');
-const shareDiv = document.querySelector('#share-card');
+const cardButton = document.querySelector("#button-card");
+const shareDiv = document.querySelector("#share-card");
 
-function unabling () {
-    cardButton.classList.add('unabled');
-    shareDiv.classList.remove('hidden');
+function unabling() {
+  cardButton.classList.add("unabled");
+  shareDiv.classList.remove("hidden");
 }
 
-cardButton.addEventListener('click', unabling);
-
-
-
-
-
-
+cardButton.addEventListener("click", unabling);
