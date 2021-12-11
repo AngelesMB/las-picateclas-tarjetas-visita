@@ -73,6 +73,19 @@ console.log(data);
 
 
 
+const inputPhone = document.querySelector('.contact__form--phone')
+const iconPhone = document.querySelector('.linkPhone')
+
+function generatePhone(){
+    console.log ('funciona');
+    iconPhone.href = `tel:+34${inputPhone.value}`;
+
+}
+
+inputPhone.addEventListener('keyup', generatePhone)
+
+
+
 
 
 
