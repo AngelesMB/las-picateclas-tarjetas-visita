@@ -218,16 +218,8 @@
       }
       & i.fas {
         color: $gunmetal;
-<<<<<<< HEAD
-        position: absolute;
-        right: 20px;
-        @include tablet {
-          right: 345px;
-        }
-=======
         text-align: right;
         margin: auto 0 auto;
->>>>>>> main
       }
     }
 
