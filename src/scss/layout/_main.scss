@@ -72,13 +72,8 @@
     align-items: center;
     justify-content: center;
     transition: all 0.5s linear;
-<<<<<<< HEAD
-    @media (min-width: 768px) {
-      margin: 120px 0 30px;
-=======
     @include tablet {
       margin: 190px 0 60px;
->>>>>>> 0557864c49eb255900a6bf58c50a5684e8b224c4
     }
     // indicamos en hover que se puede pulsar y definimos transición
     &:hover {
