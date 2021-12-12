@@ -1,7 +1,10 @@
 .preview-main {
-  @media (min-width: 768px) {
+  @include tablet {
+    background: linear-gradient(#f5f5f5, #ffffff);
     display: flex;
+    justify-content: center;
     flex-direction: row-reverse;
+    padding: 0 40px 0;
   }
 }
 .preview {
@@ -18,8 +21,12 @@
     width: 329px;
     height: 826px;
     padding-right: 40px;
-    padding-left: 30px;
-    width: 329px;
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  @include desktop {
+    width: 585px;
   }
 
   &__button {
@@ -52,7 +59,6 @@
     width: 240px;
     height: 329px;
     margin-top: 20px;
-
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 
@@ -60,8 +66,6 @@
       background-color: white;
       padding-top: 21px;
       height: 75px;
-      padding-left: 15px;
-
       .name {
         height: 20px;
         width: 206px;
@@ -71,15 +75,18 @@
         font-family: $font-title-preview;
         font-weight: bold;
         padding: 0px;
+        border-left: 5px solid $dirty-blue;
+        padding-left: 15px;
       }
       .profession {
         color: $gunmetal;
         font-family: $font-title-preview;
         font-size: 16px;
         padding: 4px 0px;
-
         height: 20px;
         width: 168px;
+        border-left: 5px solid $dirty-blue;
+        padding-left: 15px;
       }
     }
     &--img {
@@ -116,7 +123,12 @@
 }
 
 .form {
-  width: 100%;
+  @include tablet {
+    width: 50%;
+  }
+  @include desktop {
+    width: 40%;
+  }
   // fieldset completo diseña
   &__design {
     // subtítulo colores
@@ -186,26 +198,28 @@
     border-bottom: $white-two 1.5px solid;
     margin-left: 20px;
     margin-right: 20px;
+    padding-bottom: 30px;
+    @include tablet {
+      margin-left: 0px;
+      margin-right: 30px;
+    }
 
     &--sect {
       width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 0.5fr 1fr 4fr;
+      grid-template-rows: 1fr;
       & i.far,
       & i.fa {
         color: $dull-orange;
         padding: 20px 10px 20px 0;
-        // padding-right: 10px;
         font-size: 18px;
+        margin: auto 0;
       }
       & i.fas {
         color: $gunmetal;
-        position: absolute;
-        right: 20px;
-        @include tablet {
-          right: 0px;
-        }
+        text-align: right;
+        margin: auto 0 auto;
       }
     }
 
@@ -216,6 +230,7 @@
       color: $gunmetal;
       font-weight: 600;
       display: inline;
+      margin: auto 0;
     }
 
     &--button {

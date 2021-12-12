@@ -4,6 +4,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 50vh;
+  @include tablet {
+    height: 53vh;
+  }
   &__information {
     margin: 35px 35px 18px;
     display: flex;
