@@ -1,19 +1,19 @@
 .header {
   background-color: $white-four;
-  // height: 30vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 95px;
+  @include tablet {
+    height: 40vh;
+  }
   &__logo {
     width: 250px;
     height: 63px;
     @media (min-width: 768px) {
       width: 419px;
       height: 105px;
-      object-fit: contain;
-      margin-top: 30px;
     }
   }
 }
