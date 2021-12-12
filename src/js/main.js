@@ -42,6 +42,7 @@ function generatePreviewCard (){
     nameTitle.innerHTML = data.inputName.value;
     profession.innerHTML = data.inputJob.value;
     linkedinPreview.href = data.inputLinkdin.value;
+    console.log(data.inputLinkdin.value);
 };
 
 
