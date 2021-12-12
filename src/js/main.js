@@ -43,9 +43,7 @@ function generatePreviewCard (){
     profession.innerHTML = data.inputJob.value;
     linkedinPreview.href = data.inputLinkdin.value;
 };
-// function hadleKeyLinkedin (){
-    
-// }
+
 
 // función recoge email
 function handleEmail() {
