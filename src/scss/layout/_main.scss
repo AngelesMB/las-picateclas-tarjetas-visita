@@ -4,11 +4,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 50vh;
+  @include tablet {
+    height: 53vh;
+  }
   &__information {
     margin: 35px 35px 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (min-width: 768px) {
+      margin: 35px 250px;
+    }
     &Title {
       font-family: $font-titles;
       color: $dull-orange;

@@ -10,10 +10,12 @@
           <div class="preview__card--img"></div>
           <div class="preview__card--icons">
             <div class="card-icons">
-              <i class="fas fa-mobile-alt"></i>
+              <a class="linkPhone" href=""><i class="fas fa-mobile-alt"></i></a>
             </div>
             <div class="card-icons">
+              <a href="mailto:someone@example.com" class="js-email">
               <i class="far fa-envelope"></i>
+              </a>
             </div>
             <div class="card-icons">
               <i class="fab fa-linkedin-in"></i>
@@ -107,7 +109,7 @@
           id="linkedin"
           type="linkedin"
           name="linkedin"
-          pattern="^\b([A-ZÀ-ÿ][-,a-z ']+[ ]*)+$"
+          pattern="https://.*" size="30"
           title="Por favor, introduzca su cuenta de linkedin"
         />
         <label for="phoneNumber">Github</label>
@@ -117,7 +119,7 @@
         id="github"
         type="github"
         name="github"
-        pattern="^\b([A-ZÀ-ÿ][-,a-z ']+[ ]*)+$"
+        pattern="^@[A-Za-z0-9_]{1,15}$"
         title="Por favor, introduzca su cuenta de Github"
         />
       </div>
