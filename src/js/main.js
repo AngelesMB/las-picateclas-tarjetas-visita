@@ -82,7 +82,7 @@ function generatePhone(){
 
 }
 
-inputPhone.addEventListener('keyup', generatePhone)
+inputPhone.addEventListener('keyup', generatePhone);
 
 
 

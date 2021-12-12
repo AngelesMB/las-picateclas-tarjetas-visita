@@ -134,6 +134,7 @@
     &--container {
       display: flex;
       justify-content: space-between;
+      padding-bottom: 30px;
     }
     // lista de paletas
     &--list {
@@ -185,7 +186,6 @@
     border-bottom: $white-two 1.5px solid;
     margin-left: 20px;
     margin-right: 20px;
-    padding-bottom: 30px;
 
     &--sect {
       width: 100%;
@@ -295,6 +295,7 @@
       justify-content: flex-start;
       flex-direction: column;
       width: 100%;
+      padding-bottom: 30px;
       // margin-left: 20px;
 
       & label {
