@@ -11,6 +11,10 @@
   &__logo {
     width: 250px;
     height: 63px;
+    @include tablet {
+      width: 419px;
+      height: 105px;
+    }
   }
 }
 
