@@ -78,6 +78,8 @@ console.log(data);
 
 
 
+//phone
+
 
 const inputPhone = document.querySelector('.contact__form--phone')
 const iconPhone = document.querySelector('.linkPhone')
