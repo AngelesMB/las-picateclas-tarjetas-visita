@@ -50,6 +50,7 @@ const data = {}
 //constantes tarjeta preview
 const nameTitle = document.querySelector('.name');
 const profession = document.querySelector('.profession');
+const linkedinPreview = document.querySelector ('.linkedin-js');
 
 
 function generatePreviewCard (){
@@ -57,13 +58,18 @@ function generatePreviewCard (){
     // nameTitle.innerHTML = 'Nombre Apellidos';
     // profession.innerHTML = 'Profesion';
     // }
-
+    
     nameTitle.innerHTML = data.inputName.value;
     profession.innerHTML = data.inputJob.value;
+    linkedinPreview.href = data.inputLinkdin.value;
 };
+// function hadleKeyLinkedin (){
+    
+// }
 
 data.inputName.addEventListener('keyup', generatePreviewCard);
 data.inputJob.addEventListener('keyup', generatePreviewCard);
+data.inputLinkdin.addEventListener('keyup', generatePreviewCard);
 
 
 
