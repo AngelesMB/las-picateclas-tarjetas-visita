@@ -21,11 +21,18 @@
       color: $dull-orange;
       font-size: 19.2px;
       font-weight: bold;
+      @include tablet {
+        font-size: 24px;
+      }
     }
     &Subtitle {
       color: $dark-green-blue;
       font-size: 12.8px;
       text-align: center;
+      @include tablet {
+        font-size: 16px;
+        width: 300px;
+      }
     }
   }
   // bloque iconos
