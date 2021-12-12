@@ -63,9 +63,7 @@ function generatePreviewCard (){
     profession.innerHTML = data.inputJob.value;
     linkedinPreview.href = data.inputLinkdin.value;
 };
-// function hadleKeyLinkedin (){
-    
-// }
+
 
 data.inputName.addEventListener('keyup', generatePreviewCard);
 data.inputJob.addEventListener('keyup', generatePreviewCard);
