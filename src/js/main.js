@@ -36,3 +36,43 @@ rellena.addEventListener("click", handClickCollapsed);
 comparte.addEventListener("click", handClickCollapsed);
 
 
+
+
+// TARJETA DE PREVIEW
+const data = {}
+    data.inputName = document.querySelector('.contact__form--name');
+    data.inputJob = document.querySelector('.contact__form--job');
+    data.inputMail = document.querySelector('.contact__form--mail');
+    data.inputPhone = document.querySelector('.contact__form--phone');
+    data.inputLinkdin = document.querySelector('.contact__form--linkedin');
+
+
+//constantes tarjeta preview
+const nameTitle = document.querySelector('.name');
+const profession = document.querySelector('.profession');
+
+
+function generatePreviewCard (){
+    // if (data.inputName.value === undefined || data.inputJob.value === undefined){
+    // nameTitle.innerHTML = 'Nombre Apellidos';
+    // profession.innerHTML = 'Profesion';
+    // }
+
+    nameTitle.innerHTML = data.inputName.value;
+    profession.innerHTML = data.inputJob.value;
+};
+
+data.inputName.addEventListener('keyup', generatePreviewCard);
+data.inputJob.addEventListener('keyup', generatePreviewCard);
+
+
+
+
+console.log(data);
+
+
+
+
+
+
+
