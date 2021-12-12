@@ -28,19 +28,23 @@ data.inputPhone = document.querySelector(".contact__form--phone");
 data.inputLinkdin = document.querySelector(".contact__form--linkedin");
 
 //constantes tarjeta preview
-const nameTitle = document.querySelector(".name");
-const profession = document.querySelector(".profession");
+const nameTitle = document.querySelector('.name');
+const profession = document.querySelector('.profession');
+const linkedinPreview = document.querySelector ('.linkedin-js');
 const emailLink = document.querySelector(".js-email");
 
-// función recoge nombre y profesión
-function generatePreviewCard() {
-  //   if (data.inputName.value === "" || data.inputJob.value === "") {
-  //     nameTitle.innerHTML = "Nombre Apellidos";
-  //     profession.innerHTML = "Profesion";
-  //   }
-  nameTitle.innerHTML = data.inputName.value;
-  profession.innerHTML = data.inputJob.value;
-}
+function generatePreviewCard (){
+    // if (data.inputName.value === undefined || data.inputJob.value === undefined){
+    // nameTitle.innerHTML = 'Nombre Apellidos';
+    // profession.innerHTML = 'Profesion';
+    // }
+    
+    nameTitle.innerHTML = data.inputName.value;
+    profession.innerHTML = data.inputJob.value;
+    linkedinPreview.href = data.inputLinkdin.value;
+    console.log(data.inputLinkdin.value);
+};
+
 
 // función recoge email
 function handleEmail() {
@@ -49,9 +53,22 @@ function handleEmail() {
   console.log(emailLink.href);
 }
 
-data.inputName.addEventListener("keyup", generatePreviewCard);
-data.inputJob.addEventListener("keyup", generatePreviewCard);
+data.inputName.addEventListener('keyup', generatePreviewCard);
+data.inputJob.addEventListener('keyup', generatePreviewCard);
+data.inputLinkdin.addEventListener('keyup', generatePreviewCard);
 data.inputMail.addEventListener("change", handleEmail);
+
+//phone
+const inputPhone = document.querySelector('.contact__form--phone')
+const iconPhone = document.querySelector('.linkPhone')
+
+function generatePhone(){
+    console.log ('funciona');
+    iconPhone.href = `tel:+34${inputPhone.value}`;
+
+}
+
+inputPhone.addEventListener('keyup', generatePhone);
 
 // inhablitar botón cuando se ha clicado
 // y mostrar div de compartir tarjeta cuando se haya creado
