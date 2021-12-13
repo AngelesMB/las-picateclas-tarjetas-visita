@@ -18,9 +18,16 @@
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-    <header class="header extraClass" >
-      <a href= "https://adalab.es" target="_blank"> <img class="header__logo" src="./assets/images/logo-awesome-profile-cards.svg" alt="logo-awesome-cards"></a>
+    <header class="header extraClass">
+      <a href="./index.html">
+        <img
+          class="header__logo"
+          src="./assets/images/logo-awesome-profile-cards.svg"
+          alt="logo-awesome-cards"
+        />
+      </a>
     </header>
+
     <main class="preview-main"> 
         <section class="preview">
           <button class="preview__button"><span><i class="far fa-trash-alt"></i></span>Reset</button>
@@ -41,10 +48,10 @@
                   </a>
                 </div>
                 <div class="card-icons">
-                  <i class="fab fa-linkedin-in"></i>
+                  <a class="linkedin-js" href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <div class="card-icons">
-                  <a class="linkedin-js" href=""><i class="fab fa-github-alt"></i></a>
+                  <a href="#"><i class="fab fa-github-alt"></i></a>
                 </div>
               </div>
             </div>
@@ -156,7 +163,7 @@
               id="linkedin"
               type="linkedin"
               name="linkedin"
-              pattern="^\b([A-ZÀ-ÿ][-,a-z ']+[ ]*)+$"
+              pattern="https://.*" size="30"
               title="Por favor, introduzca su cuenta de linkedin"
             />
             <label for="phoneNumber">Github</label>
@@ -166,7 +173,7 @@
             id="github"
             type="github"
             name="github"
-            pattern="^\b([A-ZÀ-ÿ][-,a-z ']+[ ]*)+$"
+            pattern="^@[A-Za-z0-9_]{1,15}$"
             title="Por favor, introduzca su cuenta de Github"
             />
           </div>
@@ -198,7 +205,7 @@
      <section class="footer">
         <small class="footer__small">Awesome profile-cards @2021</small>
         <div class="footer__div">
-            <img class="footer__div--img" src="./assets/images/logo-adalab.png">
+            <a href= "https://adalab.es" target="_blank"> <img class="footer__div--img" src="./assets/images/logo-adalab.png"></a>
         </div>
     </section> 
 
