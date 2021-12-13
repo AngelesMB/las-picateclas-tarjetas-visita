@@ -78,7 +78,6 @@
     transition: all 0.5s linear;
     @include tablet {
       &Container {
-        background-color: aqua;
         display: flex;
     }
   }
