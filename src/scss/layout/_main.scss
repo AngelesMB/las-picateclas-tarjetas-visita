@@ -4,10 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  @include tablet {
-    height: 53vh;
-  }
+  height: 50vh;
   &__information {
     margin: 35px 35px 18px;
     display: flex;
@@ -79,9 +76,13 @@
     align-items: center;
     justify-content: center;
     transition: all 0.5s linear;
-    @include tablet {
-      margin: 190px 0 60px;
-    }
+    // @include tablet {
+    //   &Container {
+    //     background-color: aqua;
+    //     display: flex;
+    //     align-items: flex-end;
+    //   }
+    // }
     // indicamos en hover que se puede pulsar y definimos transición
     &:hover {
       cursor: pointer;
