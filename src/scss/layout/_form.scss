@@ -377,6 +377,14 @@
 //   left: 200px;
 // }
 
+// JS CSS
+.collapsed .form-container-js {
+  display: none;
+}
+.js-arrow-down {
+  transform: scaleY(-1)
+}
+
 .hidden {
   display: none;
 }
