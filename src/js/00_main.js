@@ -6,7 +6,19 @@
 const diseña = document.querySelector(".form-title-js");
 const rellena = document.querySelector(".form-title2-js");
 const comparte = document.querySelector(".form-title3-js");
-const allInputs = document.querySelectorAll(".js-input");
+let allInputs = document.querySelectorAll(".js-input");
+const resetButton = document.querySelector(".preview__button");
+// Reiniciar formulario con reset button:
+function resetForm (event){
+  event.preventDefault();
+  for (const eachInput of allInputs) {         
+  if (event.currentTarget){ 
+    eachInput.value = "";
+   }
+}}
+resetButton.addEventListener('click', resetForm);
+console.log('entra');
+
 
 // funciones collapsables del formulario y giro de flecha
 function handClickCollapsed(event) {
@@ -70,7 +82,7 @@ function handleEmail() {
 
 for (const eachInput of allInputs) {
   eachInput.addEventListener("keyup", generatePreviewCard)
-  eachInput.value = "hola"
+  eachInput.value = ""
 }
 
 // data.inputName.addEventListener("keyup", generatePreviewCard);
