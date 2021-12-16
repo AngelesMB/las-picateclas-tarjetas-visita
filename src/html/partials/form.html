@@ -54,7 +54,7 @@
         <i class="fas fa-chevron-up js-arrow"></i>
       </div>
       <div class="form__fill--div form-container-js">
-        <label for="name">Nombre completo</label>
+        <label class="label" for="name">Nombre completo</label>
         <input
           class="contact__form--name js-input"
           placeholder="Ej: Sally Jill"
@@ -64,7 +64,7 @@
           required="obligatorio"
         />
 
-        <label for="job">Puesto</label>
+        <label class="label" for="job">Puesto</label>
         <input
           class="contact__form--job js-input"
           placeholder="Ej: Front-end unicorn"
@@ -74,7 +74,7 @@
           required="obligatorio"
         />
 
-        <label class="form__fill--prftext">Imagen de perfil</label>
+        <label class="label" class="form__fill--prftext">Imagen de perfil</label>
 
         <div class="form__image">
           <label for="photo" class="form__btnimg js__profile-trigger">Añadir imagen</label>
@@ -82,7 +82,7 @@
           <div class="form__square js__profile-preview"></div>
         </div>
 
-        <label for="phoneNumber">Email</label>
+        <label class="label" for="phoneNumber">Email</label>
         <input
           class="contact__form--mail js-input"
           placeholder="Ej: nombre.apellidos@mail.com"
@@ -93,7 +93,7 @@
           pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[.][a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
           required
         />
-        <label for="phoneNumber">Teléfono</label>
+        <label class="label" for="phoneNumber">Teléfono</label>
         <input
           class="contact__form--phone js-input"
           placeholder="Ej: 123456789"
@@ -103,7 +103,7 @@
           pattern="^[6-7-9]{1}[0-9]{8}$"
           title="Por favor, introduce un número de teléfono fijo o móvil de España "
         />
-        <label for="linkedin">Linkedin</label>
+        <label class="label" for="linkedin">Linkedin</label>
         <input
           class="contact__form--linkedin js-input"
           placeholder="Ej: linkedin.com/in/ada.lovelace"
@@ -113,7 +113,7 @@
           pattern="https://.*" size="30"
           title="Por favor, introduzca su cuenta de linkedin"
         />
-        <label for="phoneNumber">Github</label>
+        <label class="label" for="phoneNumber">Github</label>
         <input
         class="contact__form--github js-input"
         placeholder="Ej: @Ada-Lovelace"
