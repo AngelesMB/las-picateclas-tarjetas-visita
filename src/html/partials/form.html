@@ -7,7 +7,7 @@
             <h3 class="preview__card--name name">Nico Cage</h3>
             <h4 class=" preview__card--name profession">Actor</h4>
         </div>
-          <div class="preview__card--img"></div>
+          <div class="preview__card--img js__profile-image"></div>
           <div class="preview__card--icons">
             <div class="card-icons">
               <a class="linkPhone" href=""><i class="fas fa-mobile-alt"></i></a>
@@ -77,8 +77,9 @@
         <label class="form__fill--prftext">Imagen de perfil</label>
 
         <div class="form__image">
-          <button class="form__btnimg">Añadir imagen</button>
-          <div class="form__square"></div>
+          <label for="photo" class="form__btnimg js__profile-trigger">Añadir imagen</label>
+          <input type="file" class="js__profile-upload-btn hidden"name="photo" id="photo">
+          <div class="form__square js__profile-preview"></div>
         </div>
 
         <label for="phoneNumber">Email</label>
