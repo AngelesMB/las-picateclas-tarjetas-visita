@@ -84,24 +84,24 @@
           <div class="form__square js__profile-preview"></div>
         </div>
 
-        <label class="label" for="phoneNumber">Email</label>
+        <label class="label" for="email">Email</label>
         <input
           class="contact__form--mail js-input"
           placeholder="Ej: nombre.apellidos@mail.com"
-          id="mailAddress"
+          id="email"
           type="mail"
-          name="mail"
+          name="email"
           title="Por favor, introduzca un email válido"
           pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[.][a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
           required
         />
-        <label class="label" for="phoneNumber">Teléfono</label>
+        <label class="label" for="phone">Teléfono</label>
         <input
           class="contact__form--phone js-input"
           placeholder="Ej: 123456789"
-          id="phoneNumber"
+          id="phone"
           type="tel"
-          name="phoneNumber"
+          name="phone"
           pattern="^[6-7-9]{1}[0-9]{8}$"
           title="Por favor, introduce un número de teléfono fijo o móvil de España "
         />
@@ -134,10 +134,12 @@
         <i class="fas fa-chevron-up js-arrow"></i>
       </div>
       <div class="form__share--button form-container-js">
-        <button href="#" id="button-card">
+        <input type="submit" value="Crear tarjeta" id="button-card">
+        
+        <!-- <button href="#" id="button-card">
           <i class="far fa-address-card"></i>
           <span>Crear tarjeta</span>
-        </button>
+        </button> -->
       </div>
       <div class="form__share--created hidden" id="share-card">
         <h4>La tarjeta ha sido creada:</h4>

@@ -21,15 +21,16 @@ const cardButton = document.querySelector("#button-card");
 const shareDiv = document.querySelector("#share-card");
 
 // Reiniciar formulario con reset button:
-function resetForm (event){
+function resetForm(event) {
   event.preventDefault();
-  for (const eachInput of allInputs) {         
-  if (event.currentTarget){ 
-    eachInput.value = "";
-   }
-}}
-resetButton.addEventListener('click', resetForm);
-console.log('entra');
+  for (const eachInput of allInputs) {
+    if (event.currentTarget) {
+      eachInput.value = "";
+    }
+  }
+}
+resetButton.addEventListener("click", resetForm);
+console.log("entra");
 
 // funciones collapsables del formulario y giro de flecha
 function handClickCollapsed(event) {
@@ -42,8 +43,8 @@ function handClickCollapsed(event) {
 const data = {
   name: "",
   job: "",
-  mailAddress: "",
-  phoneNumber: "",
+  email: "",
+  phone: "",
   linkedin: "",
   github: "",
   photo: "",
@@ -62,10 +63,10 @@ function renderPreviewCard() {
   } else {
     jobPreview.innerHTML = data.job;
   }
-  if (data.mailAddress === "") {
+  if (data.email === "") {
     emailLink.href = "";
   } else {
-    emailLink.href = `mailto:${data.mailAddress}`;
+    emailLink.href = `mailto:${data.email}`;
   }
   if (data.linkedin === "") {
     linkedinPreview.href = "";
@@ -77,10 +78,10 @@ function renderPreviewCard() {
   } else {
     githubPreview.href = data.github;
   }
-  if (data.phoneNumber === "") {
+  if (data.phone === "") {
     iconPhone.href = "";
   } else {
-    iconPhone.href = `tel:+34${data.phoneNumber}`;
+    iconPhone.href = `tel:+34${data.phone}`;
   }
 }
 
@@ -95,14 +96,16 @@ function getData(event) {
     data.name = selectedInputValue;
   } else if (selectedInputId === "job") {
     data.job = selectedInputValue;
-  } else if (selectedInputId === "mailAddress") {
-    data.mailAddress = selectedInputValue;
-  } else if (selectedInputId === "phoneNumber") {
-    data.phoneNumber = selectedInputValue;
+  } else if (selectedInputId === "email") {
+    data.email = selectedInputValue;
+  } else if (selectedInputId === "phone") {
+    data.phone = selectedInputValue;
   } else if (selectedInputId === "linkedin") {
     data.linkedin = selectedInputValue;
   } else if (selectedInputId === "github") {
     data.github = selectedInputValue;
+  } else if (selectedInputId === "photo") {
+    data.photo = selectedInputValue;
   }
   // data[inputName] = inputValue
   console.log(data);
@@ -113,17 +116,33 @@ for (const eachInput of allInputs) {
   eachInput.addEventListener("keyup", getData);
 }
 
+function handleCreateCard(event) {
+  //Poner preventDefault si es botón type submit
+  event.preventDefault();
+  //Función handleCreateCard: hacemos fetch al servidor para enviar objeto data
+  fetch("https://awesome-profile-cards.herokuapp.com/card", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+}
+
 // inhablitar botón cuando se ha clicado
 // y mostrar div de compartir tarjeta cuando se haya creado
 
-function unabling() {
-  cardButton.classList.add("unabled");
-  shareDiv.classList.remove("hidden");
-}
+// function unabling() {
+//   cardButton.classList.add("unabled");
+//   shareDiv.classList.remove("hidden");
+// }
 
 // eventos para desplegar formularios
 diseña.addEventListener("click", handClickCollapsed);
 rellena.addEventListener("click", handClickCollapsed);
 comparte.addEventListener("click", handClickCollapsed);
 
-cardButton.addEventListener("click", unabling);
+cardButton.addEventListener("click", handleCreateCard);
+// cardButton.addEventListener("click", unabling);
