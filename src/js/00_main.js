@@ -85,6 +85,11 @@ function renderPreviewCard() {
   }
 }
 
+// Función cambiar colores según paleta
+
+
+
+
 // Función para recoger el valor de los inputs y volcar al objeto data
 function getData(event) {
   // Recogemos el valor que escribe la usuaria
@@ -106,7 +111,10 @@ function getData(event) {
     data.github = selectedInputValue;
   } else if (selectedInputId === "photo") {
     data.photo = selectedInputValue;
+  } else if (selectedInputId === "palette") {
+    data.palette = selectedInputValue;
   }
+
   // data[inputName] = inputValue
   console.log(data);
   renderPreviewCard();
