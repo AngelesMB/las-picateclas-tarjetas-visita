@@ -8,6 +8,18 @@ const rellena = document.querySelector(".form-title2-js");
 const comparte = document.querySelector(".form-title3-js");
 let allInputs = document.querySelectorAll(".js-input");
 const resetButton = document.querySelector(".preview__button");
+
+//constantes tarjeta preview
+const namePreview = document.querySelector(".name");
+const jobPreview = document.querySelector(".profession");
+const linkedinPreview = document.querySelector(".linkedin-js");
+const githubPreview = document.querySelector(".github-js");
+const emailLink = document.querySelector(".js-email");
+const iconPhone = document.querySelector(".linkPhone");
+
+const cardButton = document.querySelector("#button-card");
+const shareDiv = document.querySelector("#share-card");
+
 // Reiniciar formulario con reset button:
 function resetForm (event){
   event.preventDefault();
@@ -19,24 +31,12 @@ function resetForm (event){
 resetButton.addEventListener('click', resetForm);
 console.log('entra');
 
-
-//constantes tarjeta preview
-const namePreview = document.querySelector(".name");
-const jobPreview = document.querySelector(".profession");
-const linkedinPreview = document.querySelector(".linkedin-js");
-const emailLink = document.querySelector(".js-email");
-
 // funciones collapsables del formulario y giro de flecha
 function handClickCollapsed(event) {
   event.currentTarget.parentNode.classList.toggle("collapsed");
   const arrow = event.currentTarget.querySelector(".js-arrow");
   arrow.classList.toggle("js-arrow-down");
 }
-
-// eventos para desplegar formularios
-diseña.addEventListener("click", handClickCollapsed);
-rellena.addEventListener("click", handClickCollapsed);
-comparte.addEventListener("click", handClickCollapsed);
 
 // TARJETA DE PREVIEW
 const data = {
@@ -67,7 +67,21 @@ function renderPreviewCard() {
   } else {
     emailLink.href = `mailto:${data.mailAddress}`;
   }
-  // phone linkedin github ¿?
+  if (data.linkedin === "") {
+    linkedinPreview.href = "";
+  } else {
+    linkedinPreview.href = data.linkedin;
+  }
+  if (data.github === "") {
+    githubPreview.href = "";
+  } else {
+    githubPreview.href = data.github;
+  }
+  if (data.phoneNumber === "") {
+    iconPhone.href = "";
+  } else {
+    iconPhone.href = `tel:+34${data.phoneNumber}`;
+  }
 }
 
 // Función para recoger el valor de los inputs y volcar al objeto data
@@ -99,67 +113,17 @@ for (const eachInput of allInputs) {
   eachInput.addEventListener("keyup", getData);
 }
 
-// data.inputName = document.querySelector(".contact__form--name");
-// data.inputJob = document.querySelector(".contact__form--job");
-// data.inputMail = document.querySelector(".contact__form--mail");
-// data.inputPhone = document.querySelector(".contact__form--phone");
-// data.inputLinkdin = document.querySelector(".contact__form--linkedin");
-
-// function generatePreviewCard() {
-//   if (data.inputName === ""){
-//   nameTitle.innerHTML = 'Nombre Apellidos';
-//   } else {
-
-//     nameTitle.innerHTML = data.inputName.value;
-//   }
-
-//   // profession.innerHTML = data.inputJob.value;
-//   // linkedinPreview.href = data.inputLinkdin.value;
-//   console.log(data.inputName.value);
-
-// }
-
-// función recoge email
-// function handleEmail() {
-//   emailLink.href = `mailto:${data.inputMail.value}`;
-//   console.log(data.inputMail.value);
-//   console.log(emailLink.href);
-// // }
-// function handleEmail() {
-//   emailLink.href = `mailto:${data.inputMail.value}`;
-//   console.log(data.inputMail.value);
-//   console.log(emailLink.href);
-// }
-
-// for (const eachInput of allInputs) {
-//   eachInput.addEventListener("keyup", generatePreviewCard)
-//   eachInput.value = ""
-// }
-
-// data.inputName.addEventListener("keyup", generatePreviewCard);
-// data.inputJob.addEventListener("keyup", generatePreviewCard);
-// data.inputLinkdin.addEventListener("keyup", generatePreviewCard);
-// data.inputMail.addEventListener("change", handleEmail);
-
-//phone
-const inputPhone = document.querySelector(".contact__form--phone");
-const iconPhone = document.querySelector(".linkPhone");
-
-function generatePhone() {
-  iconPhone.href = `tel:+34${inputPhone.value}`;
-}
-
-inputPhone.addEventListener("keyup", generatePhone);
-
 // inhablitar botón cuando se ha clicado
 // y mostrar div de compartir tarjeta cuando se haya creado
-
-const cardButton = document.querySelector("#button-card");
-const shareDiv = document.querySelector("#share-card");
 
 function unabling() {
   cardButton.classList.add("unabled");
   shareDiv.classList.remove("hidden");
 }
+
+// eventos para desplegar formularios
+diseña.addEventListener("click", handClickCollapsed);
+rellena.addEventListener("click", handClickCollapsed);
+comparte.addEventListener("click", handClickCollapsed);
 
 cardButton.addEventListener("click", unabling);
