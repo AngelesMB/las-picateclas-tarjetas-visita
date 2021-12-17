@@ -8,6 +8,7 @@ const rellena = document.querySelector(".form-title2-js");
 const comparte = document.querySelector(".form-title3-js");
 let allInputs = document.querySelectorAll(".js-input");
 const resetButton = document.querySelector(".preview__button");
+const paletteDesing = document.querySelectorAll(".list__palette");
 
 //constantes tarjeta preview
 const namePreview = document.querySelector(".name");
@@ -104,16 +105,25 @@ function getData(event) {
   } else if (selectedInputId === "email") {
     data.email = selectedInputValue;
   } else if (selectedInputId === "phone") {
-    data.phone = selectedInputValue;
+    let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
+    if (patternPhone.test(selectedInputValue)){
+       data.phone = selectedInputValue;
+    } else {
+      event.currentTarget.title = "Por favor, introduce un número de teléfono fijo o móvil de España";
+    }
+   
   } else if (selectedInputId === "linkedin") {
+    console.log(selectedInputValue);
     data.linkedin = selectedInputValue;
   } else if (selectedInputId === "github") {
+    console.log(selectedInputValue);
     data.github = selectedInputValue;
   } else if (selectedInputId === "photo") {
     data.photo = selectedInputValue;
   } else if (selectedInputId === "palette") {
     data.palette = selectedInputValue;
   }
+
 
   // data[inputName] = inputValue
   console.log(data);
@@ -146,11 +156,27 @@ function handleCreateCard(event) {
 //   cardButton.classList.add("unabled");
 //   shareDiv.classList.remove("hidden");
 // }
+function addListenersPalette (){
+for (const eachCheckBox of paletteDesing) {
+  eachCheckBox.addEventListener("click", changeColorPalette);
+}}
+addListenersPalette ();
+
+function changeColorPalette (event){
+  let checkBox = event.currentTarget.children[0].checked ;
+  if(event.currentTarget.classList.contains('second__color')){
+  namePreview.classList.add('color2');} 
+  else {
+    namePreview.classList.remove('color2');
+  }
+  console.log(event.currentTarget.children[0].checked);
+
+}
 
 // eventos para desplegar formularios
 diseña.addEventListener("click", handClickCollapsed);
 rellena.addEventListener("click", handClickCollapsed);
 comparte.addEventListener("click", handClickCollapsed);
-
 cardButton.addEventListener("click", handleCreateCard);
+
 // cardButton.addEventListener("click", unabling);
