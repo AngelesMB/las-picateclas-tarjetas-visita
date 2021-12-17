@@ -376,23 +376,12 @@
   background-color: $dirty-blue;
 }
 
-// .far {
-//   color: orange;
-//   padding: 20px;
-// }
-
-// .fas {
-//   color: gray;
-//   justify-content: flex-end;
-//   left: 200px;
-// }
-
 // JS CSS
 .collapsed .form-container-js {
   display: none;
 }
 .js-arrow-down {
-  transform: scaleY(-1)
+  transform: scaleY(-1);
 }
 
 .hidden {
