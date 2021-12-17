@@ -28,6 +28,8 @@ const data = {
   inputPhone: "",
   inputLinkdin: "",
   inputGithub: "",
+
+  //palette
 };
 
 data.inputName = document.querySelector(".contact__form--name");
