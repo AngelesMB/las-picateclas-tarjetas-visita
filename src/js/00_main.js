@@ -6,6 +6,7 @@
 const diseña = document.querySelector(".form-title-js");
 const rellena = document.querySelector(".form-title2-js");
 const comparte = document.querySelector(".form-title3-js");
+const fieldsetForm = document.querySelectorAll(".form-js");
 let allInputs = document.querySelectorAll(".js-input");
 const resetButton = document.querySelector(".preview__button");
 const paletteDesing = document.querySelectorAll(".list__palette");
@@ -24,21 +25,42 @@ const shareDiv = document.querySelector("#share-card");
 // Reiniciar formulario con reset button:
 function resetForm(event) {
   event.preventDefault();
-  for (const eachInput of allInputs) {
-    if (event.currentTarget) {
-      eachInput.value = "";
+  for (const eachInput of allInputs) {    
+      eachInput.value = "";}
+      namePreview.innerHTML = "Nombre y apellidos";
+      jobPreview.innerHTML = "Profesión";
+      emailLink.href = "";
+      linkedinPreview.href = "";
+      githubPreview.href = "";
+      iconPhone.href = "";
+      profileImage.style.backgroundImage = "";
+      profilePreview.style.backgroundImage = "";
     }
-  }
-}
+
 resetButton.addEventListener("click", resetForm);
-console.log("entra");
+
 
 // funciones collapsables del formulario y giro de flecha
-function handClickCollapsed(event) {
-  event.currentTarget.parentNode.classList.toggle("collapsed");
-  const arrow = event.currentTarget.querySelector(".js-arrow");
-  arrow.classList.toggle("js-arrow-down");
+ function handClickCollapsed(event) { 
+   if (event.currentTarget ===  rellena) {
+    event.currentTarget.parentNode.classList.toggle("collapsed");
+     diseña.parentNode.classList.add("collapsed");
+     comparte.parentNode.classList.add("collapsed");
+   } else if (event.currentTarget ===  diseña) {
+    event.currentTarget.parentNode.classList.toggle("collapsed");
+    rellena.parentNode.classList.add("collapsed");
+    comparte.parentNode.classList.add("collapsed");
+   }
+   else if (event.currentTarget ===  comparte) {
+    event.currentTarget.parentNode.classList.toggle("collapsed");
+    rellena.parentNode.classList.add("collapsed");
+    diseña.parentNode.classList.add("collapsed");
+   }
 }
+ 
+ 
+
+
 
 // TARJETA DE PREVIEW
 const data = {
@@ -174,9 +196,8 @@ function changeColorPalette (event){
 }
 
 // eventos para desplegar formularios
-diseña.addEventListener("click", handClickCollapsed);
 rellena.addEventListener("click", handClickCollapsed);
 comparte.addEventListener("click", handClickCollapsed);
-cardButton.addEventListener("click", handleCreateCard);
+diseña.addEventListener("click", handClickCollapsed); 
 
 // cardButton.addEventListener("click", unabling);
