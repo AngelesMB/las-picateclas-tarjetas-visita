@@ -21,6 +21,10 @@ const iconPhone = document.querySelector(".linkPhone");
 const icons = document.querySelectorAll(".js-icon");
 const iconsBorder = document.querySelectorAll(".js-iconBorder");
 
+
+const divLine = document.querySelector('.js__line-palette')
+
+
 const cardButton = document.querySelector("#button-card");
 const shareDiv = document.querySelector("#share-card");
 
@@ -206,7 +210,11 @@ function changeColorPalette(event) {
   }
   // Segunda paleta
   if (event.currentTarget.classList.contains("second__color")) {
-    namePreview.classList.add("color2");
+      namePreview.classList.add("color2-dark");
+      divLine.classList.add("background-color2")
+      jobPreview.classList.add ("color2-light")
+    
+
     for (const icon of icons) {
       icon.classList.add("color2-icon");
     }
@@ -214,7 +222,9 @@ function changeColorPalette(event) {
       iconBorder.classList.add("color2-icon-border");
     }
   } else {
-    namePreview.classList.remove("color2");
+      namePreview.classList.remove("color2-dark");
+      divLine.classList.remove("background-color2")
+      jobPreview.classList.remove ("color2-light")
     for (const icon of icons) {
       icon.classList.remove("color2-icon");
     }
@@ -224,6 +234,11 @@ function changeColorPalette(event) {
   }
   // Tercera paleta
   if (event.currentTarget.classList.contains("third__color")) {
+    namePreview.classList.add("color3-dark");
+    divLine.classList.add("background-color3")
+    jobPreview.classList.add ("color3")
+
+
     for (const icon of icons) {
       icon.classList.add("color3-icon");
     }
@@ -231,6 +246,9 @@ function changeColorPalette(event) {
       iconBorder.classList.add("color3-icon-border");
     }
   } else {
+      namePreview.classList.remove("color3-dark");
+      divLine.classList.remove("background-color3")
+      jobPreview.classList.remove ("color3")
     for (const icon of icons) {
       icon.classList.remove("color3-icon");
     }
