@@ -163,9 +163,11 @@ addListenersPalette();
 
 function changeColorPalette(event) {
   let checkBox = event.currentTarget.children[0];
+  // Si está desmarcado al clickar todo el div, lo marcamos
   if (checkBox.checked === false) {
     checkBox.checked = true;
   }
+  // Segunda paleta
   if (event.currentTarget.classList.contains("second__color")) {
     namePreview.classList.add("color2");
     for (const icon of icons) {
@@ -183,6 +185,7 @@ function changeColorPalette(event) {
       iconBorder.classList.remove("color2-icon-border");
     }
   }
+  // Tercera paleta
   if (event.currentTarget.classList.contains("third__color")) {
     for (const icon of icons) {
       icon.classList.add("color3-icon");
