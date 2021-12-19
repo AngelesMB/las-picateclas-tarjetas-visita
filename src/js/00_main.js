@@ -42,20 +42,36 @@ resetButton.addEventListener("click", resetForm);
 
 // funciones collapsables del formulario y giro de flecha
  function handClickCollapsed(event) { 
+  const arrows = event.currentTarget.querySelectorAll(".js-arrow");
+
+  for (let index = 0; index < arrows.length; index++) {
+    let arrow = arrows[index];
+    arrow.classList.toggle("js-arrow-down");
+  }
+  
    if (event.currentTarget ===  rellena) {
     event.currentTarget.parentNode.classList.toggle("collapsed");
      diseña.parentNode.classList.add("collapsed");
      comparte.parentNode.classList.add("collapsed");
+  
+
    } else if (event.currentTarget ===  diseña) {
     event.currentTarget.parentNode.classList.toggle("collapsed");
     rellena.parentNode.classList.add("collapsed");
-    comparte.parentNode.classList.add("collapsed");
+    comparte.parentNode.classList.add("collapsed"); 
+    
+
    }
    else if (event.currentTarget ===  comparte) {
     event.currentTarget.parentNode.classList.toggle("collapsed");
     rellena.parentNode.classList.add("collapsed");
     diseña.parentNode.classList.add("collapsed");
+   
+    
    }
+  
+    
+  
 }
  
 
