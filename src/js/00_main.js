@@ -17,6 +17,8 @@ const linkedinPreview = document.querySelector(".linkedin-js");
 const githubPreview = document.querySelector(".github-js");
 const emailLink = document.querySelector(".js-email");
 const iconPhone = document.querySelector(".linkPhone");
+const icons = document.querySelectorAll(".js-icon");
+const iconsBorder = document.querySelectorAll(".js-iconBorder");
 
 const cardButton = document.querySelector("#button-card");
 const shareDiv = document.querySelector("#share-card");
@@ -161,15 +163,41 @@ addListenersPalette();
 
 function changeColorPalette(event) {
   let checkBox = event.currentTarget.children[0];
-  console.log(checkBox);
-  if (!checkBox.checked){
-  checkBox.setAttribute("checked", "checked");}
+  if (checkBox.checked === false) {
+    checkBox.checked = true;
+  }
   if (event.currentTarget.classList.contains("second__color")) {
     namePreview.classList.add("color2");
+    for (const icon of icons) {
+      icon.classList.add("color2-icon");
+    }
+    for (const iconBorder of iconsBorder) {
+      iconBorder.classList.add("color2-icon-border");
+    }
   } else {
     namePreview.classList.remove("color2");
+    for (const icon of icons) {
+      icon.classList.remove("color2-icon");
+    }
+    for (const iconBorder of iconsBorder) {
+      iconBorder.classList.remove("color2-icon-border");
+    }
   }
-  console.log(event.currentTarget.children[0].checked);
+  if (event.currentTarget.classList.contains("third__color")) {
+    for (const icon of icons) {
+      icon.classList.add("color3-icon");
+    }
+    for (const iconBorder of iconsBorder) {
+      iconBorder.classList.add("color3-icon-border");
+    }
+  } else {
+    for (const icon of icons) {
+      icon.classList.remove("color3-icon");
+    }
+    for (const iconBorder of iconsBorder) {
+      iconBorder.classList.remove("color3-icon-border");
+    }
+  }
 }
 
 // eventos para desplegar formularios
