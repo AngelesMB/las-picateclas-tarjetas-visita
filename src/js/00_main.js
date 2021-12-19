@@ -18,6 +18,8 @@ const linkedinPreview = document.querySelector(".linkedin-js");
 const githubPreview = document.querySelector(".github-js");
 const emailLink = document.querySelector(".js-email");
 const iconPhone = document.querySelector(".linkPhone");
+const icons = document.querySelectorAll(".js-icon");
+const iconsBorder = document.querySelectorAll(".js-iconBorder");
 
 const cardButton = document.querySelector("#button-card");
 const shareDiv = document.querySelector("#share-card");
@@ -125,9 +127,6 @@ function renderPreviewCard() {
 
 // Función cambiar colores según paleta
 
-
-
-
 // Función para recoger el valor de los inputs y volcar al objeto data
 function getData(event) {
   // Recogemos el valor que escribe la usuaria
@@ -143,12 +142,12 @@ function getData(event) {
     data.email = selectedInputValue;
   } else if (selectedInputId === "phone") {
     let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
-    if (patternPhone.test(selectedInputValue)){
-       data.phone = selectedInputValue;
+    if (patternPhone.test(selectedInputValue)) {
+      data.phone = selectedInputValue;
     } else {
-      event.currentTarget.title = "Por favor, introduce un número de teléfono fijo o móvil de España";
+      event.currentTarget.title =
+        "Por favor, introduce un número de teléfono fijo o móvil de España";
     }
-   
   } else if (selectedInputId === "linkedin") {
     console.log(selectedInputValue);
     data.linkedin = selectedInputValue;
@@ -160,7 +159,6 @@ function getData(event) {
   } else if (selectedInputId === "palette") {
     data.palette = selectedInputValue;
   }
-
 
   // data[inputName] = inputValue
   console.log(data);
@@ -193,21 +191,53 @@ function handleCreateCard(event) {
 //   cardButton.classList.add("unabled");
 //   shareDiv.classList.remove("hidden");
 // }
-function addListenersPalette (){
-for (const eachCheckBox of paletteDesing) {
-  eachCheckBox.addEventListener("click", changeColorPalette);
-}}
-addListenersPalette ();
-
-function changeColorPalette (event){
-  let checkBox = event.currentTarget.children[0].checked ;
-  if(event.currentTarget.classList.contains('second__color')){
-  namePreview.classList.add('color2');} 
-  else {
-    namePreview.classList.remove('color2');
+function addListenersPalette() {
+  for (const eachCheckBox of paletteDesing) {
+    eachCheckBox.addEventListener("click", changeColorPalette);
   }
-  console.log(event.currentTarget.children[0].checked);
+}
+addListenersPalette();
 
+function changeColorPalette(event) {
+  let checkBox = event.currentTarget.children[0];
+  // Si está desmarcado al clickar todo el div, lo marcamos
+  if (checkBox.checked === false) {
+    checkBox.checked = true;
+  }
+  // Segunda paleta
+  if (event.currentTarget.classList.contains("second__color")) {
+    namePreview.classList.add("color2");
+    for (const icon of icons) {
+      icon.classList.add("color2-icon");
+    }
+    for (const iconBorder of iconsBorder) {
+      iconBorder.classList.add("color2-icon-border");
+    }
+  } else {
+    namePreview.classList.remove("color2");
+    for (const icon of icons) {
+      icon.classList.remove("color2-icon");
+    }
+    for (const iconBorder of iconsBorder) {
+      iconBorder.classList.remove("color2-icon-border");
+    }
+  }
+  // Tercera paleta
+  if (event.currentTarget.classList.contains("third__color")) {
+    for (const icon of icons) {
+      icon.classList.add("color3-icon");
+    }
+    for (const iconBorder of iconsBorder) {
+      iconBorder.classList.add("color3-icon-border");
+    }
+  } else {
+    for (const icon of icons) {
+      icon.classList.remove("color3-icon");
+    }
+    for (const iconBorder of iconsBorder) {
+      iconBorder.classList.remove("color3-icon-border");
+    }
+  }
 }
 
 // eventos para desplegar formularios
