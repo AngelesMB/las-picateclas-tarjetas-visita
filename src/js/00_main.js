@@ -170,7 +170,7 @@ function getData(event) {
 }
 
 for (const eachInput of allInputs) {
-  eachInput.addEventListener("keyup", getData);
+  eachInput.addEventListener("change", getData);
 }
 
 function handleCreateCard(event) {
@@ -213,6 +213,7 @@ function changeColorPalette(event) {
       namePreview.classList.add("color2-dark");
       divLine.classList.add("background-color2")
       jobPreview.classList.add ("color2-light")
+      data.palette = 2;
     
 
     for (const icon of icons) {
@@ -223,8 +224,8 @@ function changeColorPalette(event) {
     }
   } else {
       namePreview.classList.remove("color2-dark");
-      divLine.classList.remove("background-color2")
-      jobPreview.classList.remove ("color2-light")
+      divLine.classList.remove("background-color2");
+      jobPreview.classList.remove ("color2-light");
     for (const icon of icons) {
       icon.classList.remove("color2-icon");
     }
@@ -235,8 +236,9 @@ function changeColorPalette(event) {
   // Tercera paleta
   if (event.currentTarget.classList.contains("third__color")) {
     namePreview.classList.add("color3-dark");
-    divLine.classList.add("background-color3")
-    jobPreview.classList.add ("color3")
+    divLine.classList.add("background-color3");
+    jobPreview.classList.add ("color3");
+    data.palette = 3;
 
 
     for (const icon of icons) {
