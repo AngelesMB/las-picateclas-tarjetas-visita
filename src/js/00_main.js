@@ -262,5 +262,6 @@ function changeColorPalette(event) {
 rellena.addEventListener("click", handClickCollapsed);
 comparte.addEventListener("click", handClickCollapsed);
 diseña.addEventListener("click", handClickCollapsed); 
+cardButton.addEventListener("click", handleCreateCard);
 
 // cardButton.addEventListener("click", unabling);
