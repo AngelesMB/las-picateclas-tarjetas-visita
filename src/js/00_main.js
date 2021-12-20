@@ -97,33 +97,33 @@ function getData(event) {
   // Obtenemos el id del input clickado (name, job...)
   const selectedInputId = event.currentTarget.id;
   // Si la usuaria escribe en el input id name, vuelco el valor en el objeto data.name
-  if (selectedInputId === "name") {
-    data.name = selectedInputValue;
-  } else if (selectedInputId === "job") {
-    data.job = selectedInputValue;
-  } else if (selectedInputId === "email") {
-    data.email = selectedInputValue;
-  } else if (selectedInputId === "phone") {
-    let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
-    if (patternPhone.test(selectedInputValue)) {
-      data.phone = selectedInputValue;
-    } else {
-      event.currentTarget.title =
-        "Por favor, introduce un número de teléfono fijo o móvil de España";
-    }
-  } else if (selectedInputId === "linkedin") {
-    console.log(selectedInputValue);
-    data.linkedin = selectedInputValue;
-  } else if (selectedInputId === "github") {
-    console.log(selectedInputValue);
-    data.github = selectedInputValue;
-  } else if (selectedInputId === "photo") {
-    data.photo = selectedInputValue;
-  } else if (selectedInputId === "palette") {
-    data.palette = selectedInputValue;
-  }
+  // if (selectedInputId === "name") {
+  //   data.name = selectedInputValue;
+  // } else if (selectedInputId === "job") {
+  //   data.job = selectedInputValue;
+  // } else if (selectedInputId === "email") {
+  //   data.email = selectedInputValue;
+  // } else if (selectedInputId === "phone") {
+  //   let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
+  //   if (patternPhone.test(selectedInputValue)) {
+  //     data.phone = selectedInputValue;
+  //   } else {
+  //     event.currentTarget.title =
+  //       "Por favor, introduce un número de teléfono fijo o móvil de España";
+  //   }
+  // } else if (selectedInputId === "linkedin") {
+  //   console.log(selectedInputValue);
+  //   data.linkedin = selectedInputValue;
+  // } else if (selectedInputId === "github") {
+  //   console.log(selectedInputValue);
+  //   data.github = selectedInputValue;
+  // } else if (selectedInputId === "photo") {
+  //   data.photo = selectedInputValue;
+  // } else if (selectedInputId === "palette") {
+  //   data.palette = selectedInputValue;
+  // }
 
-  // data[inputName] = inputValue
+  data[selectedInputId] = selectedInputValue;
   console.log(data);
   renderPreviewCard();
 }
