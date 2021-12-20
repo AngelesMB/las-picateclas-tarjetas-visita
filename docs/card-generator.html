@@ -30,14 +30,16 @@
 
     <main class="preview-main"> 
         <section class="preview">
-          <button class="preview__button"><span><i class="far fa-trash-alt"></i></span>Reset</button>
+          <button class="preview__button" type="reset"><span><i class="far fa-trash-alt"></i></span>Reset</button>
           <div class="preview__background">
             <div class="preview__card">
               <div class="preview__card--name">
-                <h3 class="preview__card--name name">Nico Cage</h3>
-                <h4 class=" preview__card--name profession">Actor</h4>
+                <div class="line-palette"></div>
+                  <h3 class="preview__card--name name">Nico Cage</h3>
+                  <h4 class=" preview__card--name profession">Actor</h4>
+                
             </div>
-              <div class="preview__card--img"></div>
+              <div class="preview__card--img js__profile-image"></div>
               <div class="preview__card--icons">
                 <div class="card-icons">
                   <a class="linkPhone" href=""><i class="fas fa-mobile-alt"></i></a>
@@ -51,7 +53,7 @@
                   <a class="linkedin-js" href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <div class="card-icons">
-                  <a href="#"><i class="fab fa-github-alt"></i></a>
+                  <a href=""><i class="fab fa-github-alt"></i></a>
                 </div>
               </div>
             </div>
@@ -101,16 +103,16 @@
           </div>
         </fieldset>
 
-        <fieldset class="form__fill form-js">
-          <div class="form__fill--sect form-title2-js">
+        <fieldset class="form__fill form-js collapsed">
+          <div class="form__fill--sect form-title2-js collapsed">
             <i class="far fa-keyboard"></i>
             <h2 class="form__fill--title">Rellena</h2>
-            <i class="fas fa-chevron-up js-arrow"></i>
+            <i class="fas fa-chevron-up js-arrow js-arrow-down"></i>
           </div>
           <div class="form__fill--div form-container-js">
-            <label for="name">Nombre completo</label>
+            <label class="label" for="name">Nombre completo</label>
             <input
-              class="contact__form--name"
+              class="contact__form--name js-input"
               placeholder="Ej: Sally Jill"
               id="name"
               type="text"
@@ -118,9 +120,9 @@
               required="obligatorio"
             />
 
-            <label for="job">Puesto</label>
+            <label class="label" for="job">Puesto</label>
             <input
-              class="contact__form--job"
+              class="contact__form--job js-input"
               placeholder="Ej: Front-end unicorn"
               id="job"
               type="text"
@@ -128,37 +130,37 @@
               required="obligatorio"
             />
 
-            <label class="form__fill--prftext">Imagen de perfil</label>
+            <label class="label" class="form__fill--prftext">Imagen de perfil</label>
 
             <div class="form__image">
-              <button class="form__btnimg">Añadir imagen</button>
-              <div class="form__square"></div>
+              <label for="photo" class="form__btnimg js__profile-trigger">Añadir imagen</label>
+              <input type="file" class="js__profile-upload-btn hidden"name="photo" id="photo">
+              <div class="form__square js__profile-preview"></div>
             </div>
 
-            <label for="phoneNumber">Email</label>
+            <label class="label" for="email">Email</label>
             <input
-              class="contact__form--mail"
+              class="contact__form--mail js-input"
               placeholder="Ej: nombre.apellidos@mail.com"
-              id="mailAddress"
+              id="email"
               type="mail"
-              name="mail"
+              name="email"
               title="Por favor, introduzca un email válido"
               pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[.][a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
               required
             />
-            <label for="phoneNumber">Teléfono</label>
+            <label class="label" for="phone">Teléfono</label>
             <input
-              class="contact__form--phone"
+              class="contact__form--phone js-input"
               placeholder="Ej: 123456789"
-              id="phoneNumber"
+              id="phone"
               type="tel"
-              name="phoneNumber"
-              pattern="^[6-7-9]{1}[0-9]{8}$"
-              title="Por favor, introduce un número de teléfono fijo o móvil de España "
+              name="phone"
+            
             />
-            <label for="linkedin">Linkedin</label>
+            <label class="label" for="linkedin">Linkedin</label>
             <input
-              class="contact__form--linkedin"
+              class="contact__form--linkedin js-input"
               placeholder="Ej: linkedin.com/in/ada.lovelace"
               id="linkedin"
               type="linkedin"
@@ -166,9 +168,9 @@
               pattern="https://.*" size="30"
               title="Por favor, introduzca su cuenta de linkedin"
             />
-            <label for="phoneNumber">Github</label>
+            <label class="label" for="github">Github</label>
             <input
-            class="contact__form--github"
+            class="contact__form--github js-input github-js"
             placeholder="Ej: @Ada-Lovelace"
             id="github"
             type="github"
@@ -178,17 +180,19 @@
             />
           </div>
         </fieldset>
-        <fieldset class="form__share form-js">
-          <div class="form__share--sect form-title3-js">
+        <fieldset class="form__share form-j collapsed">
+          <div class="form__share--sect form-title3-js ">
             <i class="fa fa-share-alt"></i>
             <h2 class="form__share--title">Comparte</h2>
-            <i class="fas fa-chevron-up js-arrow"></i>
+            <i class="fas fa-chevron-up js-arrow js-arrow-down"></i>
           </div>
           <div class="form__share--button form-container-js">
-            <button href="#" id="button-card">
+            <!-- <input type="submit" value="Crear tarjeta" id="button-card"> -->
+            
+             <button tipe = submit href="#" id="button-card">
               <i class="far fa-address-card"></i>
               <span>Crear tarjeta</span>
-            </button>
+            </button> 
           </div>
           <div class="form__share--created hidden" id="share-card">
             <h4>La tarjeta ha sido creada:</h4>
