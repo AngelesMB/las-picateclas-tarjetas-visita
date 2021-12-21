@@ -118,9 +118,9 @@ function renderPreviewCard() {
     linkedinPreview.href = data.linkedin;
   }
   if (data.github === "") {
-    githubPreview.href = "";
+    githubPreview.href = "www.github.com/";
   } else {
-    githubPreview.href = data.github;
+    githubPreview.href = `www.github.com/${data.github}`;
   }
   if (data.phone === "") {
     iconPhone.href = "";
