@@ -105,10 +105,10 @@ function renderPreviewCard() {
   } else {
     linkedinPreview.href = data.linkedin;
   }
-  if (data.github === '') {
-    githubPreview.href = '';
+  if (data.github === "") {
+    githubPreview.href = "www.github.com/";
   } else {
-    githubPreview.href = data.github;
+    githubPreview.href = `www.github.com/${data.github}`;
   }
   if (data.phone === '') {
     iconPhone.href = '';
@@ -158,7 +158,7 @@ function getData(event) {
 }
 
 for (const eachInput of allInputs) {
-  eachInput.addEventListener('keyup', getData);
+  eachInput.addEventListener("change", getData);
 }
 
 function handleCreateCard(event) {
@@ -177,7 +177,7 @@ function handleCreateCard(event) {
         // cardLink.innerHTML = data.cardURL;
         shareDiv.innerHTML = `<h4>La tarjeta ha sido creada:</h4>
         <a href="${data.cardURL}" class="card-link" target="_blank">${data.cardURL}</a>
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20tarjeta%20de%20contacto%20creada%20por%20Las%20Picateclas%20Twitter&url=${data.cardURL}&hashtags=programación,html,adalab" target="_blank"><i class="fab fa-twitter"></i>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20tarjeta%20de%20contacto%20creada%20por%20Las%20Picateclas%20&url=${data.cardURL}&hashtags=programación,js,adalab" target="_blank"><i class="fab fa-twitter"></i>
           Compartir en twitter
         </a>`;
         cardButton.classList.add('unabled');
@@ -210,10 +210,12 @@ function changeColorPalette(event) {
     checkBox.checked = true;
   }
   // Segunda paleta
-  if (event.currentTarget.classList.contains('second__color')) {
-    namePreview.classList.add('color2-dark');
-    divLine.classList.add('background-color2');
-    jobPreview.classList.add('color2-light');
+  if (event.currentTarget.classList.contains("second__color")) {
+      namePreview.classList.add("color2-dark");
+      divLine.classList.add("background-color2")
+      jobPreview.classList.add ("color2-light")
+      data.palette = 2;
+    
 
     for (const icon of icons) {
       icon.classList.add('color2-icon');
@@ -222,9 +224,9 @@ function changeColorPalette(event) {
       iconBorder.classList.add('color2-icon-border');
     }
   } else {
-    namePreview.classList.remove('color2-dark');
-    divLine.classList.remove('background-color2');
-    jobPreview.classList.remove('color2-light');
+      namePreview.classList.remove("color2-dark");
+      divLine.classList.remove("background-color2");
+      jobPreview.classList.remove ("color2-light");
     for (const icon of icons) {
       icon.classList.remove('color2-icon');
     }
@@ -233,10 +235,12 @@ function changeColorPalette(event) {
     }
   }
   // Tercera paleta
-  if (event.currentTarget.classList.contains('third__color')) {
-    namePreview.classList.add('color3-dark');
-    divLine.classList.add('background-color3');
-    jobPreview.classList.add('color3');
+  if (event.currentTarget.classList.contains("third__color")) {
+    namePreview.classList.add("color3-dark");
+    divLine.classList.add("background-color3");
+    jobPreview.classList.add ("color3");
+    data.palette = 3;
+
 
     for (const icon of icons) {
       icon.classList.add('color3-icon');
