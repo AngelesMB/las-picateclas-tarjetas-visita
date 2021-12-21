@@ -196,6 +196,14 @@ function unabling() {
   shareDiv.classList.remove('hidden');
 }
 
+function enableButtonReset() {
+  cardButton.classList.remove('unabled');
+  shareDiv.classList.add('hidden');
+}
+
+cardButton.addEventListener('click', unabling);
+resetButton.addEventListener('click', enableButtonReset);
+
 function addListenersPalette() {
   for (const eachCheckBox of paletteDesing) {
     eachCheckBox.addEventListener('click', changeColorPalette);
@@ -270,5 +278,3 @@ rellena.addEventListener('click', handleFieldsetClick);
 comparte.addEventListener('click', handleFieldsetClick);
 
 cardButton.addEventListener('click', handleCreateCard);
-
-cardButton.addEventListener('click', unabling);
