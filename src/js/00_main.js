@@ -32,6 +32,10 @@ function resetForm(event) {
   for (const eachInput of allInputs) {
     eachInput.value = "";
   }
+
+
+
+  
   namePreview.innerHTML = "Nombre y apellidos";
   jobPreview.innerHTML = "Profesión";
   emailLink.href = "";
@@ -40,6 +44,7 @@ function resetForm(event) {
   iconPhone.href = "";
   profileImage.style.backgroundImage = "";
   profilePreview.style.backgroundImage = "";
+  data.photo = "";
 }
 
 resetButton.addEventListener("click", resetForm);
@@ -82,6 +87,7 @@ const data = {
   photo: "",
   palette: 1,
 };
+
 
 // función para actualizar tarjeta de preview con datos usuaria
 function renderPreviewCard() {
