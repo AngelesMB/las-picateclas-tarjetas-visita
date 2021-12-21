@@ -7,7 +7,7 @@ const diseña = document.querySelector(".form-title-js");
 const rellena = document.querySelector(".form-title2-js");
 const comparte = document.querySelector(".form-title3-js");
 const fieldsetForm = document.querySelectorAll(".form-js");
-let allInputs = document.querySelectorAll(".js-input");
+const allInputs = document.querySelectorAll(".js-input");
 const resetButton = document.querySelector(".preview__button");
 const paletteDesing = document.querySelectorAll(".list__palette");
 
@@ -21,9 +21,7 @@ const iconPhone = document.querySelector(".linkPhone");
 const icons = document.querySelectorAll(".js-icon");
 const iconsBorder = document.querySelectorAll(".js-iconBorder");
 
-
-const divLine = document.querySelector('.js__line-palette')
-
+const divLine = document.querySelector(".js__line-palette");
 
 const cardButton = document.querySelector("#button-card");
 const shareDiv = document.querySelector("#share-card");
@@ -31,57 +29,47 @@ const shareDiv = document.querySelector("#share-card");
 // Reiniciar formulario con reset button:
 function resetForm(event) {
   event.preventDefault();
-  for (const eachInput of allInputs) {    
-      eachInput.value = "";}
-      namePreview.innerHTML = "Nombre y apellidos";
-      jobPreview.innerHTML = "Profesión";
-      emailLink.href = "";
-      linkedinPreview.href = "";
-      githubPreview.href = "";
-      iconPhone.href = "";
-      profileImage.style.backgroundImage = "";
-      profilePreview.style.backgroundImage = "";
-    }
+  for (const eachInput of allInputs) {
+    eachInput.value = "";
+  }
+  namePreview.innerHTML = "Nombre y apellidos";
+  jobPreview.innerHTML = "Profesión";
+  emailLink.href = "";
+  linkedinPreview.href = "";
+  githubPreview.href = "";
+  iconPhone.href = "";
+  profileImage.style.backgroundImage = "";
+  profilePreview.style.backgroundImage = "";
+}
 
 resetButton.addEventListener("click", resetForm);
 
-
 // funciones collapsables del formulario y giro de flecha
- function handClickCollapsed(event) { 
-  const arrows = event.currentTarget.querySelectorAll(".js-arrow");
-
-  for (let index = 0; index < arrows.length; index++) {
-    let arrow = arrows[index];
-    arrow.classList.toggle("js-arrow-down");
-  }
-  
-   if (event.currentTarget ===  rellena) {
+function collapseFieldset(event) {
+  if (event.currentTarget === rellena) {
     event.currentTarget.parentNode.classList.toggle("collapsed");
-     diseña.parentNode.classList.add("collapsed");
-     comparte.parentNode.classList.add("collapsed");
-  
-
-   } else if (event.currentTarget ===  diseña) {
+    diseña.parentNode.classList.add("collapsed");
+    comparte.parentNode.classList.add("collapsed");
+  } else if (event.currentTarget === diseña) {
     event.currentTarget.parentNode.classList.toggle("collapsed");
     rellena.parentNode.classList.add("collapsed");
-    comparte.parentNode.classList.add("collapsed"); 
-    
-
-   }
-   else if (event.currentTarget ===  comparte) {
+    comparte.parentNode.classList.add("collapsed");
+  } else if (event.currentTarget === comparte) {
     event.currentTarget.parentNode.classList.toggle("collapsed");
     rellena.parentNode.classList.add("collapsed");
     diseña.parentNode.classList.add("collapsed");
-   
-    
-   }
-  
-    
-  
+  }
 }
- 
 
-
+function rotateArrows() {
+  for (const fieldset of fieldsetForm) {
+    if (fieldset.classList.contains("collapsed")) {
+      fieldset.querySelector(".js-arrow").classList.add("js-arrow-down");
+    } else {
+      fieldset.querySelector(".js-arrow").classList.remove("js-arrow-down");
+    }
+  }
+}
 
 // TARJETA DE PREVIEW
 const data = {
@@ -185,16 +173,29 @@ function handleCreateCard(event) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      if (data.success) {
+        // cardLink.innerHTML = data.cardURL;
+        shareDiv.innerHTML = `<h4>La tarjeta ha sido creada:</h4>
+        <a href="${data.cardURL}" class="card-link" target="_blank">${data.cardURL}</a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20tarjeta%20de%20contacto%20creada%20por%20Las%20Picateclas%20Twitter&url=${data.cardURL}&hashtags=programación,html,adalab" target="_blank"><i class="fab fa-twitter"></i>
+          Compartir en twitter
+        </a>`
+        cardButton.classList.add("unabled");
+        shareDiv.classList.remove("hidden");
+      }
+      // else {
+      //   catchError.innerHTML = 'Error: debes rellenar todos los campos';
     });
 }
 
 // inhablitar botón cuando se ha clicado
 // y mostrar div de compartir tarjeta cuando se haya creado
 
-// function unabling() {
-//   cardButton.classList.add("unabled");
-//   shareDiv.classList.remove("hidden");
-// }
+function unabling() {
+  cardButton.classList.add("unabled");
+  shareDiv.classList.remove("hidden");
+}
+
 function addListenersPalette() {
   for (const eachCheckBox of paletteDesing) {
     eachCheckBox.addEventListener("click", changeColorPalette);
@@ -248,9 +249,9 @@ function changeColorPalette(event) {
       iconBorder.classList.add("color3-icon-border");
     }
   } else {
-      namePreview.classList.remove("color3-dark");
-      divLine.classList.remove("background-color3")
-      jobPreview.classList.remove ("color3")
+    namePreview.classList.remove("color3-dark");
+    divLine.classList.remove("background-color3");
+    jobPreview.classList.remove("color3");
     for (const icon of icons) {
       icon.classList.remove("color3-icon");
     }
@@ -260,10 +261,16 @@ function changeColorPalette(event) {
   }
 }
 
+function handleFieldsetClick(event) {
+  collapseFieldset(event);
+  rotateArrows();
+}
+
 // eventos para desplegar formularios
-rellena.addEventListener("click", handClickCollapsed);
-comparte.addEventListener("click", handClickCollapsed);
-diseña.addEventListener("click", handClickCollapsed); 
+diseña.addEventListener("click", handleFieldsetClick)
+rellena.addEventListener("click", handleFieldsetClick)
+comparte.addEventListener("click", handleFieldsetClick)
+
 cardButton.addEventListener("click", handleCreateCard);
 
-// cardButton.addEventListener("click", unabling);
+cardButton.addEventListener("click", unabling);
