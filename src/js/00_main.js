@@ -173,16 +173,29 @@ function handleCreateCard(event) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      if (data.success) {
+        // cardLink.innerHTML = data.cardURL;
+        shareDiv.innerHTML = `<h4>La tarjeta ha sido creada:</h4>
+        <a href="${data.cardURL}" class="card-link" target="_blank">${data.cardURL}</a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20tarjeta%20de%20contacto%20creada%20por%20Las%20Picateclas%20Twitter&url=${data.cardURL}&hashtags=programación,html,adalab" target="_blank"><i class="fab fa-twitter"></i>
+          Compartir en twitter
+        </a>`
+        cardButton.classList.add("unabled");
+        shareDiv.classList.remove("hidden");
+      }
+      // else {
+      //   catchError.innerHTML = 'Error: debes rellenar todos los campos';
     });
 }
 
 // inhablitar botón cuando se ha clicado
 // y mostrar div de compartir tarjeta cuando se haya creado
 
-// function unabling() {
-//   cardButton.classList.add("unabled");
-//   shareDiv.classList.remove("hidden");
-// }
+function unabling() {
+  cardButton.classList.add("unabled");
+  shareDiv.classList.remove("hidden");
+}
+
 function addListenersPalette() {
   for (const eachCheckBox of paletteDesing) {
     eachCheckBox.addEventListener("click", changeColorPalette);
@@ -256,4 +269,4 @@ comparte.addEventListener("click", handleFieldsetClick)
 
 cardButton.addEventListener("click", handleCreateCard);
 
-// cardButton.addEventListener("click", unabling);
+cardButton.addEventListener("click", unabling);
