@@ -173,18 +173,21 @@ function handleCreateCard(event) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      if (data.success) {
+      if (data.success===true) {
         // cardLink.innerHTML = data.cardURL;
         shareDiv.innerHTML = `<h4>La tarjeta ha sido creada:</h4>
         <a href="${data.cardURL}" class="card-link" target="_blank">${data.cardURL}</a>
         <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20tarjeta%20de%20contacto%20creada%20por%20Las%20Picateclas%20&url=${data.cardURL}&hashtags=programación,js,adalab" target="_blank"><i class="fab fa-twitter"></i>
           Compartir en twitter
         </a>`;
-        cardButton.classList.add('unabled');
-        shareDiv.classList.remove('hidden');
+  
       }
-      // else {
-      //   catchError.innerHTML = 'Error: debes rellenar todos los campos';
+      else if(data.success===false){
+        console.log('Error: debes rellenar todos los campos');
+        shareDiv.innerHTML = `<h4>Error: Debes rellenar todos los campos</h4>`;
+
+    
+      }
     });
 }
 
@@ -271,6 +274,18 @@ function handleFieldsetClick(event) {
   collapseFieldset(event);
   rotateArrows();
 }
+
+//Si no rellena todos los campos requeridos el botón no funciona
+
+function noFillButton() {
+  if(allInputs.required==="") {
+    console.log("stop")
+  } 
+  else {
+    console.log("go");
+  }
+}
+noFillButton();
 
 // eventos para desplegar formularios
 diseña.addEventListener('click', handleFieldsetClick);
