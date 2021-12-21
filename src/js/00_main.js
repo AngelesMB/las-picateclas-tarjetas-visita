@@ -173,6 +173,9 @@ for (const eachInput of allInputs) {
   eachInput.addEventListener("keyup", getData);
 }
 
+
+const cardLink = document.querySelector ('.card-link')
+
 function handleCreateCard(event) {
   //Poner preventDefault si es botón type submit
   event.preventDefault();
@@ -185,8 +188,24 @@ function handleCreateCard(event) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      if (data.success) {
+        // cardLink.innerHTML = data.cardURL;
+        shareDiv.innerHTML = `<h4>La tarjeta ha sido creada:</h4>
+        <a href="${data.cardURL}" class="card-link" target="_blank">${data.cardURL}</a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20a%20crear%20un%20enlace%20para%20compartir%20en%20Twitter&url=http%3A%2F%2Fparzibyte.me%2Fblog&via=parzibyte&hashtags=programación,html" target="_blank"><i class="fab fa-twitter"></i>
+          Compartir en twitter
+        </a>`
+        cardButton.classList.add("unabled");
+        shareDiv.classList.remove("hidden");
+
+      }
+      // else {
+      //   catchError.innerHTML = 'Error: debes rellenar todos los campos';
+        
+     
     });
 }
+
 
 // inhablitar botón cuando se ha clicado
 // y mostrar div de compartir tarjeta cuando se haya creado
@@ -264,4 +283,4 @@ comparte.addEventListener("click", handClickCollapsed);
 diseña.addEventListener("click", handClickCollapsed); 
 cardButton.addEventListener("click", handleCreateCard);
 
-// cardButton.addEventListener("click", unabling);
+
