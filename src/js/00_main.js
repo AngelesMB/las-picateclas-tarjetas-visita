@@ -1,37 +1,38 @@
-"use strict";
+'use strict';
 
 // colapsar contneido formularios cuando tengamos otra opción abierta
 
 // constantes del form.
-const diseña = document.querySelector(".form-title-js");
-const rellena = document.querySelector(".form-title2-js");
-const comparte = document.querySelector(".form-title3-js");
-const fieldsetForm = document.querySelectorAll(".form-js");
-const allInputs = document.querySelectorAll(".js-input");
-const resetButton = document.querySelector(".preview__button");
-const paletteDesing = document.querySelectorAll(".list__palette");
+const diseña = document.querySelector('.form-title-js');
+const rellena = document.querySelector('.form-title2-js');
+const comparte = document.querySelector('.form-title3-js');
+const fieldsetForm = document.querySelectorAll('.form-js');
+const allInputs = document.querySelectorAll('.js-input');
+const resetButton = document.querySelector('.preview__button');
+const paletteDesing = document.querySelectorAll('.list__palette');
 
 //constantes tarjeta preview
-const namePreview = document.querySelector(".name");
-const jobPreview = document.querySelector(".profession");
-const linkedinPreview = document.querySelector(".linkedin-js");
-const githubPreview = document.querySelector(".github-js");
-const emailLink = document.querySelector(".js-email");
-const iconPhone = document.querySelector(".linkPhone");
-const icons = document.querySelectorAll(".js-icon");
-const iconsBorder = document.querySelectorAll(".js-iconBorder");
+const namePreview = document.querySelector('.name');
+const jobPreview = document.querySelector('.profession');
+const linkedinPreview = document.querySelector('.linkedin-js');
+const githubPreview = document.querySelector('.github-js');
+const emailLink = document.querySelector('.js-email');
+const iconPhone = document.querySelector('.linkPhone');
+const icons = document.querySelectorAll('.js-icon');
+const iconsBorder = document.querySelectorAll('.js-iconBorder');
 
-const divLine = document.querySelector(".js__line-palette");
+const divLine = document.querySelector('.js__line-palette');
 
-const cardButton = document.querySelector("#button-card");
-const shareDiv = document.querySelector("#share-card");
+const cardButton = document.querySelector('#button-card');
+const shareDiv = document.querySelector('#share-card');
 
 // Reiniciar formulario con reset button:
 function resetForm(event) {
   event.preventDefault();
   for (const eachInput of allInputs) {
-    eachInput.value = "";
+    eachInput.value = '';
   }
+<<<<<<< HEAD
 
 
 
@@ -45,79 +46,89 @@ function resetForm(event) {
   profileImage.style.backgroundImage = "";
   profilePreview.style.backgroundImage = "";
   data.photo = "";
+=======
+  namePreview.innerHTML = 'Nombre y apellidos';
+  jobPreview.innerHTML = 'Profesión';
+  emailLink.href = '';
+  linkedinPreview.href = '';
+  githubPreview.href = '';
+  iconPhone.href = '';
+  profileImage.style.backgroundImage = '';
+  profilePreview.style.backgroundImage = '';
+>>>>>>> main
 }
 
-resetButton.addEventListener("click", resetForm);
+resetButton.addEventListener('click', resetForm);
 
 // funciones collapsables del formulario y giro de flecha
 function collapseFieldset(event) {
   if (event.currentTarget === rellena) {
-    event.currentTarget.parentNode.classList.toggle("collapsed");
-    diseña.parentNode.classList.add("collapsed");
-    comparte.parentNode.classList.add("collapsed");
+    event.currentTarget.parentNode.classList.toggle('collapsed');
+    diseña.parentNode.classList.add('collapsed');
+    comparte.parentNode.classList.add('collapsed');
   } else if (event.currentTarget === diseña) {
-    event.currentTarget.parentNode.classList.toggle("collapsed");
-    rellena.parentNode.classList.add("collapsed");
-    comparte.parentNode.classList.add("collapsed");
+    event.currentTarget.parentNode.classList.toggle('collapsed');
+    rellena.parentNode.classList.add('collapsed');
+    comparte.parentNode.classList.add('collapsed');
   } else if (event.currentTarget === comparte) {
-    event.currentTarget.parentNode.classList.toggle("collapsed");
-    rellena.parentNode.classList.add("collapsed");
-    diseña.parentNode.classList.add("collapsed");
+    event.currentTarget.parentNode.classList.toggle('collapsed');
+    rellena.parentNode.classList.add('collapsed');
+    diseña.parentNode.classList.add('collapsed');
   }
 }
 
 function rotateArrows() {
   for (const fieldset of fieldsetForm) {
-    if (fieldset.classList.contains("collapsed")) {
-      fieldset.querySelector(".js-arrow").classList.add("js-arrow-down");
+    if (fieldset.classList.contains('collapsed')) {
+      fieldset.querySelector('.js-arrow').classList.add('js-arrow-down');
     } else {
-      fieldset.querySelector(".js-arrow").classList.remove("js-arrow-down");
+      fieldset.querySelector('.js-arrow').classList.remove('js-arrow-down');
     }
   }
 }
 
 // TARJETA DE PREVIEW
 const data = {
-  name: "",
-  job: "",
-  email: "",
-  phone: "",
-  linkedin: "",
-  github: "",
-  photo: "",
+  name: '',
+  job: '',
+  email: '',
+  phone: '',
+  linkedin: '',
+  github: '',
+  photo: '',
   palette: 1,
 };
 
 
 // función para actualizar tarjeta de preview con datos usuaria
 function renderPreviewCard() {
-  if (data.name === "") {
-    namePreview.innerHTML = "Nombre y apellidos";
+  if (data.name === '') {
+    namePreview.innerHTML = 'Nombre y apellidos';
   } else {
     namePreview.innerHTML = data.name;
   }
-  if (data.job === "") {
-    jobPreview.innerHTML = "Profesión";
+  if (data.job === '') {
+    jobPreview.innerHTML = 'Profesión';
   } else {
     jobPreview.innerHTML = data.job;
   }
-  if (data.email === "") {
-    emailLink.href = "";
+  if (data.email === '') {
+    emailLink.href = '';
   } else {
     emailLink.href = `mailto:${data.email}`;
   }
-  if (data.linkedin === "") {
-    linkedinPreview.href = "";
+  if (data.linkedin === '') {
+    linkedinPreview.href = '';
   } else {
     linkedinPreview.href = data.linkedin;
   }
-  if (data.github === "") {
-    githubPreview.href = "www.github.com/";
+  if (data.github === '') {
+    githubPreview.href = 'www.github.com/';
   } else {
     githubPreview.href = `www.github.com/${data.github}`;
   }
-  if (data.phone === "") {
-    iconPhone.href = "";
+  if (data.phone === '') {
+    iconPhone.href = '';
   } else {
     iconPhone.href = `tel:+34${data.phone}`;
   }
@@ -164,17 +175,17 @@ function getData(event) {
 }
 
 for (const eachInput of allInputs) {
-  eachInput.addEventListener("change", getData);
+  eachInput.addEventListener('change', getData);
 }
 
 function handleCreateCard(event) {
   //Poner preventDefault si es botón type submit
   event.preventDefault();
   //Función handleCreateCard: hacemos fetch al servidor para enviar objeto data
-  fetch("https://awesome-profile-cards.herokuapp.com/card", {
-    method: "POST",
+  fetch('https://awesome-profile-cards.herokuapp.com/card', {
+    method: 'POST',
     body: JSON.stringify(data),
-    headers: { "Content-Type": "application/json" },
+    headers: { 'Content-Type': 'application/json' },
   })
     .then((response) => response.json())
     .then((data) => {
@@ -185,9 +196,9 @@ function handleCreateCard(event) {
         <a href="${data.cardURL}" class="card-link" target="_blank">${data.cardURL}</a>
         <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20tarjeta%20de%20contacto%20creada%20por%20Las%20Picateclas%20&url=${data.cardURL}&hashtags=programación,js,adalab" target="_blank"><i class="fab fa-twitter"></i>
           Compartir en twitter
-        </a>`
-        cardButton.classList.add("unabled");
-        shareDiv.classList.remove("hidden");
+        </a>`;
+        cardButton.classList.add('unabled');
+        shareDiv.classList.remove('hidden');
       }
       // else {
       //   catchError.innerHTML = 'Error: debes rellenar todos los campos';
@@ -198,13 +209,13 @@ function handleCreateCard(event) {
 // y mostrar div de compartir tarjeta cuando se haya creado
 
 function unabling() {
-  cardButton.classList.add("unabled");
-  shareDiv.classList.remove("hidden");
+  cardButton.classList.add('unabled');
+  shareDiv.classList.remove('hidden');
 }
 
 function addListenersPalette() {
   for (const eachCheckBox of paletteDesing) {
-    eachCheckBox.addEventListener("click", changeColorPalette);
+    eachCheckBox.addEventListener('click', changeColorPalette);
   }
 }
 addListenersPalette();
@@ -216,53 +227,51 @@ function changeColorPalette(event) {
     checkBox.checked = true;
   }
   // Segunda paleta
-  if (event.currentTarget.classList.contains("second__color")) {
-      namePreview.classList.add("color2-dark");
-      divLine.classList.add("background-color2")
-      jobPreview.classList.add ("color2-light")
-      data.palette = 2;
-    
+  if (event.currentTarget.classList.contains('second__color')) {
+    namePreview.classList.add('color2-dark');
+    divLine.classList.add('background-color2');
+    jobPreview.classList.add('color2-light');
+    data.palette = 2;
 
     for (const icon of icons) {
-      icon.classList.add("color2-icon");
+      icon.classList.add('color2-icon');
     }
     for (const iconBorder of iconsBorder) {
-      iconBorder.classList.add("color2-icon-border");
+      iconBorder.classList.add('color2-icon-border');
     }
   } else {
-      namePreview.classList.remove("color2-dark");
-      divLine.classList.remove("background-color2");
-      jobPreview.classList.remove ("color2-light");
+    namePreview.classList.remove('color2-dark');
+    divLine.classList.remove('background-color2');
+    jobPreview.classList.remove('color2-light');
     for (const icon of icons) {
-      icon.classList.remove("color2-icon");
+      icon.classList.remove('color2-icon');
     }
     for (const iconBorder of iconsBorder) {
-      iconBorder.classList.remove("color2-icon-border");
+      iconBorder.classList.remove('color2-icon-border');
     }
   }
   // Tercera paleta
-  if (event.currentTarget.classList.contains("third__color")) {
-    namePreview.classList.add("color3-dark");
-    divLine.classList.add("background-color3");
-    jobPreview.classList.add ("color3");
+  if (event.currentTarget.classList.contains('third__color')) {
+    namePreview.classList.add('color3-dark');
+    divLine.classList.add('background-color3');
+    jobPreview.classList.add('color3');
     data.palette = 3;
 
-
     for (const icon of icons) {
-      icon.classList.add("color3-icon");
+      icon.classList.add('color3-icon');
     }
     for (const iconBorder of iconsBorder) {
-      iconBorder.classList.add("color3-icon-border");
+      iconBorder.classList.add('color3-icon-border');
     }
   } else {
-    namePreview.classList.remove("color3-dark");
-    divLine.classList.remove("background-color3");
-    jobPreview.classList.remove("color3");
+    namePreview.classList.remove('color3-dark');
+    divLine.classList.remove('background-color3');
+    jobPreview.classList.remove('color3');
     for (const icon of icons) {
-      icon.classList.remove("color3-icon");
+      icon.classList.remove('color3-icon');
     }
     for (const iconBorder of iconsBorder) {
-      iconBorder.classList.remove("color3-icon-border");
+      iconBorder.classList.remove('color3-icon-border');
     }
   }
 }
@@ -273,10 +282,10 @@ function handleFieldsetClick(event) {
 }
 
 // eventos para desplegar formularios
-diseña.addEventListener("click", handleFieldsetClick)
-rellena.addEventListener("click", handleFieldsetClick)
-comparte.addEventListener("click", handleFieldsetClick)
+diseña.addEventListener('click', handleFieldsetClick);
+rellena.addEventListener('click', handleFieldsetClick);
+comparte.addEventListener('click', handleFieldsetClick);
 
-cardButton.addEventListener("click", handleCreateCard);
+cardButton.addEventListener('click', handleCreateCard);
 
-cardButton.addEventListener("click", unabling);
+cardButton.addEventListener('click', unabling);
