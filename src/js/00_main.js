@@ -40,6 +40,8 @@ function resetForm(event) {
   iconPhone.href = "";
   profileImage.style.backgroundImage = "";
   profilePreview.style.backgroundImage = "";
+  // vaciar objeto
+  // llamar funcion render
 }
 
 resetButton.addEventListener("click", resetForm);
@@ -101,14 +103,14 @@ function renderPreviewCard() {
     emailLink.href = `mailto:${data.email}`;
   }
   if (data.linkedin === "") {
-    linkedinPreview.href = "";
+    linkedinPreview.href = "http://www.linkedin.com/";
   } else {
     linkedinPreview.href = data.linkedin;
   }
   if (data.github === "") {
-    githubPreview.href = "www.github.com/";
+    githubPreview.href = "http://www.github.com/";
   } else {
-    githubPreview.href = `www.github.com/${data.github}`;
+    githubPreview.href = `http://www.github.com/${data.github}`;
   }
   if (data.phone === "") {
     iconPhone.href = "";
@@ -133,13 +135,13 @@ function getData(event) {
   // } else if (selectedInputId === "email") {
   //   data.email = selectedInputValue;
   // } else if (selectedInputId === "phone") {
-  //   let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
-  //   if (patternPhone.test(selectedInputValue)) {
-  //     data.phone = selectedInputValue;
-  //   } else {
-  //     event.currentTarget.title =
-  //       "Por favor, introduce un número de teléfono fijo o móvil de España";
-  //   }
+  // let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
+  // if (patternPhone.test(selectedInputValue)) {
+  //   data[selectedInputId] = selectedInputValue;
+  // } else {
+  //   event.currentTarget.title =
+  //     "Por favor, introduce un número de teléfono fijo o móvil de España";
+  // }
   // } else if (selectedInputId === "linkedin") {
   //   console.log(selectedInputValue);
   //   data.linkedin = selectedInputValue;
@@ -157,8 +159,19 @@ function getData(event) {
   renderPreviewCard();
 }
 
+// Guardar datos en LS
+function saveLocalStorage() {
+  // Para guardar un objeto necesitamos pasarlo a string
+  localStorage.setItem("userData", JSON.stringify(data));
+}
+
+function handleInputChange(event) {
+  getData(event);
+  saveLocalStorage();
+}
+
 for (const eachInput of allInputs) {
-  eachInput.addEventListener("change", getData);
+  eachInput.addEventListener("change", handleInputChange);
 }
 
 function handleCreateCard(event) {
@@ -179,7 +192,7 @@ function handleCreateCard(event) {
         <a href="${data.cardURL}" class="card-link" target="_blank">${data.cardURL}</a>
         <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20tarjeta%20de%20contacto%20creada%20por%20Las%20Picateclas%20&url=${data.cardURL}&hashtags=programación,js,adalab" target="_blank"><i class="fab fa-twitter"></i>
           Compartir en twitter
-        </a>`
+        </a>`;
         cardButton.classList.add("unabled");
         shareDiv.classList.remove("hidden");
       }
@@ -211,11 +224,10 @@ function changeColorPalette(event) {
   }
   // Segunda paleta
   if (event.currentTarget.classList.contains("second__color")) {
-      namePreview.classList.add("color2-dark");
-      divLine.classList.add("background-color2")
-      jobPreview.classList.add ("color2-light")
-      data.palette = 2;
-    
+    namePreview.classList.add("color2-dark");
+    divLine.classList.add("background-color2");
+    jobPreview.classList.add("color2-light");
+    data.palette = 2;
 
     for (const icon of icons) {
       icon.classList.add("color2-icon");
@@ -224,9 +236,9 @@ function changeColorPalette(event) {
       iconBorder.classList.add("color2-icon-border");
     }
   } else {
-      namePreview.classList.remove("color2-dark");
-      divLine.classList.remove("background-color2");
-      jobPreview.classList.remove ("color2-light");
+    namePreview.classList.remove("color2-dark");
+    divLine.classList.remove("background-color2");
+    jobPreview.classList.remove("color2-light");
     for (const icon of icons) {
       icon.classList.remove("color2-icon");
     }
@@ -238,9 +250,8 @@ function changeColorPalette(event) {
   if (event.currentTarget.classList.contains("third__color")) {
     namePreview.classList.add("color3-dark");
     divLine.classList.add("background-color3");
-    jobPreview.classList.add ("color3");
+    jobPreview.classList.add("color3");
     data.palette = 3;
-
 
     for (const icon of icons) {
       icon.classList.add("color3-icon");
@@ -267,9 +278,9 @@ function handleFieldsetClick(event) {
 }
 
 // eventos para desplegar formularios
-diseña.addEventListener("click", handleFieldsetClick)
-rellena.addEventListener("click", handleFieldsetClick)
-comparte.addEventListener("click", handleFieldsetClick)
+diseña.addEventListener("click", handleFieldsetClick);
+rellena.addEventListener("click", handleFieldsetClick);
+comparte.addEventListener("click", handleFieldsetClick);
 
 cardButton.addEventListener("click", handleCreateCard);
 
