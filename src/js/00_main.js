@@ -11,6 +11,9 @@ const allInputs = document.querySelectorAll('.js-input');
 const resetButton = document.querySelector('.preview__button');
 const paletteDesing = document.querySelectorAll('.list__palette');
 
+// variables paleta diseña
+let checkBox = "";
+let checkPalette = document.querySelectorAll("#palette");
 //constantes tarjeta preview
 const namePreview = document.querySelector('.name');
 const jobPreview = document.querySelector('.profession');
@@ -32,15 +35,27 @@ function resetForm(event) {
   for (const eachInput of allInputs) {
     eachInput.value = '';
   }
-  namePreview.innerHTML = 'Nombre y apellidos';
-  jobPreview.innerHTML = 'Profesión';
-  emailLink.href = '';
-  linkedinPreview.href = '';
-  githubPreview.href = '';
-  iconPhone.href = '';
-  profileImage.style.backgroundImage = '';
-  profilePreview.style.backgroundImage = '';
-}
+  profileImage.style.backgroundImage = "";
+  profilePreview.style.backgroundImage = "";
+  checkPalette[0].checked = true;
+  resetObject ();
+  renderPreviewCard();
+  changeColorPalette(event);}
+  
+ function resetObject () {
+  data = {
+    name: '',
+    job: '',
+    email: '',
+    phone: '',
+    linkedin: '',
+    github: '',
+    photo: '',
+    palette: 1
+  };
+  
+
+ }
 
 resetButton.addEventListener('click', resetForm);
 
@@ -72,7 +87,7 @@ function rotateArrows() {
 }
 
 // TARJETA DE PREVIEW
-const data = {
+let data = {
   name: '',
   job: '',
   email: '',
@@ -80,8 +95,9 @@ const data = {
   linkedin: '',
   github: '',
   photo: '',
-  palette: 1,
+  palette: 1
 };
+
 
 // función para actualizar tarjeta de preview con datos usuaria
 function renderPreviewCard() {
@@ -161,22 +177,6 @@ for (const eachInput of allInputs) {
   eachInput.addEventListener('change', getData);
 }
 
-// function buttonCardactive() {
-//   for (const eachInput of allInputs) {
-//     eachInput.addEventListener('change', getData);
-
-//     if (eachInput.hasAttribute('required') && eachInput.value === '') {
-//       cardButton.setAttribute('disabled', true);
-//       cardButton.classList.add('unabled');
-//       console.log('stop');
-//     } else {
-//       console.log('go');
-//       cardButton.removeAttribute('disabled');
-//       cardButton.classList.remove('unabled');
-//     }
-//   }
-// }
-
 function handleCreateCard(event) {
   //Poner preventDefault si es botón type submit
   event.preventDefault();
@@ -189,18 +189,18 @@ function handleCreateCard(event) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      if (data.success === true) {
+      if (data.success) {
         // cardLink.innerHTML = data.cardURL;
         shareDiv.innerHTML = `<h4>La tarjeta ha sido creada:</h4>
         <a href="${data.cardURL}" class="card-link" target="_blank">${data.cardURL}</a>
         <a class="twitter" href="https://twitter.com/intent/tweet?text=Mi%20tarjeta%20de%20contacto%20creada%20por%20Las%20Picateclas%20&url=${data.cardURL}&hashtags=programación,js,adalab" target="_blank"><i class="fab fa-twitter"></i>
           Compartir en twitter
         </a>`;
-      } else if (data.success === false) {
-        console.log('Error: debes rellenar todos los campos');
-        shareDiv.innerHTML = `<h4>Error: Debes rellenar todos los campos</h4>`;
+        cardButton.classList.add('unabled');
+        shareDiv.classList.remove('hidden');
       }
-      // buttonCardactive();
+      // else {
+      //   catchError.innerHTML = 'Error: debes rellenar todos los campos';
     });
 }
 
@@ -212,14 +212,6 @@ function unabling() {
   shareDiv.classList.remove('hidden');
 }
 
-function enableButtonReset() {
-  cardButton.classList.remove('unabled');
-  shareDiv.classList.add('hidden');
-}
-
-cardButton.addEventListener('click', unabling);
-resetButton.addEventListener('click', enableButtonReset);
-
 function addListenersPalette() {
   for (const eachCheckBox of paletteDesing) {
     eachCheckBox.addEventListener('click', changeColorPalette);
@@ -228,7 +220,7 @@ function addListenersPalette() {
 addListenersPalette();
 
 function changeColorPalette(event) {
-  let checkBox = event.currentTarget.children[0];
+  checkBox = event.currentTarget.children[0];
   // Si está desmarcado al clickar todo el div, lo marcamos
   if (checkBox.checked === false) {
     checkBox.checked = true;
@@ -288,11 +280,11 @@ function handleFieldsetClick(event) {
   rotateArrows();
 }
 
-//Si no rellena todos los campos requeridos el botón no funciona
-
 // eventos para desplegar formularios
 diseña.addEventListener('click', handleFieldsetClick);
 rellena.addEventListener('click', handleFieldsetClick);
 comparte.addEventListener('click', handleFieldsetClick);
 
 cardButton.addEventListener('click', handleCreateCard);
+
+cardButton.addEventListener('click', unabling);
