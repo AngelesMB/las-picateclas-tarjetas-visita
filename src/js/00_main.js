@@ -159,14 +159,23 @@ function getData(event) {
 
 for (const eachInput of allInputs) {
   eachInput.addEventListener('change', getData);
-
-  if (eachInput.hasAttribute('required') && eachInput.value === '') {
-    cardButton.classList.add('unabled');
-    console.log('stop');
-  } else {
-    console.log('go');
-  }
 }
+
+// function buttonCardactive() {
+//   for (const eachInput of allInputs) {
+//     eachInput.addEventListener('change', getData);
+
+//     if (eachInput.hasAttribute('required') && eachInput.value === '') {
+//       cardButton.setAttribute('disabled', true);
+//       cardButton.classList.add('unabled');
+//       console.log('stop');
+//     } else {
+//       console.log('go');
+//       cardButton.removeAttribute('disabled');
+//       cardButton.classList.remove('unabled');
+//     }
+//   }
+// }
 
 function handleCreateCard(event) {
   //Poner preventDefault si es botón type submit
@@ -191,6 +200,7 @@ function handleCreateCard(event) {
         console.log('Error: debes rellenar todos los campos');
         shareDiv.innerHTML = `<h4>Error: Debes rellenar todos los campos</h4>`;
       }
+      // buttonCardactive();
     });
 }
 

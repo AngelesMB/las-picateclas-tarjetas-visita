@@ -63,13 +63,13 @@
         <label class="label" for="name">Nombre completo</label>
         <input minlength="2" maxlength="16" class="contact__form--name js-input"
           placeholder="Ej: Sally Jill" id="name" type="text" name="fill_name"
-          required="obligatorio" />
+          required />
 
         <label class="label" for="job">Puesto</label>
         <input class="contact__form--job js-input"
         minlength="2" maxlength="16"
           placeholder="Ej: Front-end unicorn" id="job" type="text"
-          name="fill_job" required="obligatorio" />
+          name="fill_job" required />
 
         <label class="label" class="form__fill--prftext">Imagen de
           perfil</label>
@@ -78,7 +78,8 @@
           <label for="photo" class="form__btnimg js__profile-trigger">Añadir
             imagen</label>
           <input type="file" class="js__profile-upload-btn hidden" name="photo"
-            id="photo">
+            id="photo"
+            required >
           <div class="form__square js__profile-preview"></div>
         </div>
 
@@ -95,11 +96,13 @@
         <input class="contact__form--linkedin js-input"
           placeholder="Ej: ada.lovelace" id="linkedin" type="linkedin"
           name="linkedin" size="30"
-          title="Por favor, introduzca su cuenta de linkedin" />
+          title="Por favor, introduzca su cuenta de linkedin"
+          required  />
         <label class="label" for="github">Github</label>
         <input class="contact__form--github js-input github-js"
           placeholder="Ej: Ada-Lovelace" id="github" type="github" name="github"
-          title="Por favor, introduzca su cuenta de Github" />
+          title="Por favor, introduzca su cuenta de Github"
+          required  />
       </div>
     </fieldset>
     <fieldset class="form__share form-js collapsed">
@@ -111,7 +114,7 @@
       <div class="form__share--button form-container-js">
         <!-- <input type="submit" value="Crear tarjeta" id="button-card"> -->
         
-         <button type = submit href="#" id="button-card">
+         <button type="submit" href="#" id="button-card">
           <i class="far fa-address-card"></i>
           <span>Crear tarjeta</span>
         </button>
