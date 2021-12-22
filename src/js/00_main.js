@@ -31,32 +31,28 @@ function resetForm(event) {
   event.preventDefault();
   for (const eachInput of allInputs) {
     eachInput.value = '';
-  }
-<<<<<<< HEAD
-
-
-
-  
-  namePreview.innerHTML = "Nombre y apellidos";
-  jobPreview.innerHTML = "Profesión";
-  emailLink.href = "";
-  linkedinPreview.href = "";
-  githubPreview.href = "";
-  iconPhone.href = "";
+  };
+ 
   profileImage.style.backgroundImage = "";
   profilePreview.style.backgroundImage = "";
-  data.photo = "";
-=======
-  namePreview.innerHTML = 'Nombre y apellidos';
-  jobPreview.innerHTML = 'Profesión';
-  emailLink.href = '';
-  linkedinPreview.href = '';
-  githubPreview.href = '';
-  iconPhone.href = '';
-  profileImage.style.backgroundImage = '';
-  profilePreview.style.backgroundImage = '';
->>>>>>> main
-}
+  resetObject ();
+  renderPreviewCard();
+ // TODO: resetear img. 
+ }
+ function resetObject () {
+  data = {
+    name: '',
+    job: '',
+    email: '',
+    phone: '',
+    linkedin: '',
+    github: '',
+    photo: '',
+    palette: 1
+  };
+  
+
+ }
 
 resetButton.addEventListener('click', resetForm);
 
@@ -88,7 +84,7 @@ function rotateArrows() {
 }
 
 // TARJETA DE PREVIEW
-const data = {
+let data = {
   name: '',
   job: '',
   email: '',
@@ -96,7 +92,7 @@ const data = {
   linkedin: '',
   github: '',
   photo: '',
-  palette: 1,
+  palette: 1
 };
 
 
