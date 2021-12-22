@@ -36,8 +36,8 @@
           <div class="preview__card">
             <div class="preview__card--name">
               <div class="line-palette js__line-palette"></div>
-              <h3 class="preview__card--name name">Nico Cage</h3>
-              <h4 class=" preview__card--name profession">Actor</h4>
+              <h3 class="preview__card--name name">Vilma Picatecla</h3>
+              <h4 class=" preview__card--name profession">Front-end</h4>
 
             </div>
             <div class="preview__card--img js__profile-image"></div>
@@ -52,11 +52,11 @@
                 </a>
               </div>
               <div class="card-icons js-iconBorder">
-                <a class="linkedin-js" href="www.linkedin.com/"><i
+                <a class="linkedin-js" href="https://www.linkedin.com/" target="_blank"><i
                     class="fab fa-linkedin-in js-icon"></i></a>
               </div>
               <div class="card-icons js-iconBorder">
-                <a href="" class="github-js"><i
+                <a href="" class="github-js" href="https://www.github.com/" target="_blank"><i
                     class="fab fa-github-alt js-icon"></i></a>
               </div>
             </div>
@@ -111,13 +111,13 @@
             <label class="label" for="name">Nombre completo</label>
             <input minlength="2" maxlength="16" class="contact__form--name js-input"
               placeholder="Ej: Sally Jill" id="name" type="text" name="fill_name"
-              required="obligatorio" />
+              required />
 
             <label class="label" for="job">Puesto</label>
             <input class="contact__form--job js-input"
             minlength="2" maxlength="16"
               placeholder="Ej: Front-end unicorn" id="job" type="text"
-              name="fill_job" required="obligatorio" />
+              name="fill_job" required />
 
             <label class="label" class="form__fill--prftext">Imagen de
               perfil</label>
@@ -126,7 +126,8 @@
               <label for="photo" class="form__btnimg js__profile-trigger">Añadir
                 imagen</label>
               <input type="file" class="js__profile-upload-btn hidden" name="photo"
-                id="photo">
+                id="photo"
+                required >
               <div class="form__square js__profile-preview"></div>
             </div>
 
@@ -143,11 +144,13 @@
             <input class="contact__form--linkedin js-input"
               placeholder="Ej: ada.lovelace" id="linkedin" type="linkedin"
               name="linkedin" size="30"
-              title="Por favor, introduzca su cuenta de linkedin" />
+              title="Por favor, introduzca su cuenta de linkedin"
+              required  />
             <label class="label" for="github">Github</label>
             <input class="contact__form--github js-input github-js"
               placeholder="Ej: Ada-Lovelace" id="github" type="github" name="github"
-              title="Por favor, introduzca su cuenta de Github" />
+              title="Por favor, introduzca su cuenta de Github"
+              required  />
           </div>
         </fieldset>
         <fieldset class="form__share form-js collapsed">
@@ -159,14 +162,14 @@
           <div class="form__share--button form-container-js">
             <!-- <input type="submit" value="Crear tarjeta" id="button-card"> -->
             
-             <button type = submit href="#" id="button-card">
+             <button type="submit" href="#" id="button-card"  class="unabled share-button" disabled>
               <i class="far fa-address-card"></i>
               <span>Crear tarjeta</span>
             </button>
           </div>
           <div class="form__share--created hidden" id="share-card">
             <h4>La tarjeta ha sido creada:</h4>
-            <a href="#" class="card-link" target="_blank">#</a>
+            <a href="#" class="card-link" target="_blank"></a>
             <a href="#" class="twitter" target="_blank">
               <i class="fab fa-twitter"></i>
               Compartir en twitter
