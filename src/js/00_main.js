@@ -121,7 +121,7 @@ function renderPreviewCard() {
   if (data.github === '') {
     githubPreview.href = 'www.github.com/';
   } else {
-    githubPreview.href = `www.github.com/${data.github}`;
+    githubPreview.href = `http://www.github.com/${data.github}`;
   }
   if (data.phone === '') {
     iconPhone.href = '';
@@ -146,13 +146,13 @@ function getData(event) {
   // } else if (selectedInputId === "email") {
   //   data.email = selectedInputValue;
   // } else if (selectedInputId === "phone") {
-  //   let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
-  //   if (patternPhone.test(selectedInputValue)) {
-  //     data.phone = selectedInputValue;
-  //   } else {
-  //     event.currentTarget.title =
-  //       "Por favor, introduce un número de teléfono fijo o móvil de España";
-  //   }
+  // let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
+  // if (patternPhone.test(selectedInputValue)) {
+  //   data[selectedInputId] = selectedInputValue;
+  // } else {
+  //   event.currentTarget.title =
+  //     "Por favor, introduce un número de teléfono fijo o móvil de España";
+  // }
   // } else if (selectedInputId === "linkedin") {
   //   console.log(selectedInputValue);
   //   data.linkedin = selectedInputValue;
@@ -170,8 +170,19 @@ function getData(event) {
   renderPreviewCard();
 }
 
+// Guardar datos en LS
+function saveLocalStorage() {
+  // Para guardar un objeto necesitamos pasarlo a string
+  localStorage.setItem("userData", JSON.stringify(data));
+}
+
+function handleInputChange(event) {
+  getData(event);
+  saveLocalStorage();
+}
+
 for (const eachInput of allInputs) {
-  eachInput.addEventListener('change', getData);
+  eachInput.addEventListener("change", handleInputChange);
 }
 
 function handleCreateCard(event) {
