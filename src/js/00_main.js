@@ -32,6 +32,7 @@ function resetForm(event) {
   for (const eachInput of allInputs) {
     eachInput.value = '';
   }
+<<<<<<< HEAD
   namePreview.innerHTML = 'Nombre y apellidos';
   jobPreview.innerHTML = 'Profesión';
   emailLink.href = '';
@@ -40,6 +41,18 @@ function resetForm(event) {
   iconPhone.href = '';
   profileImage.style.backgroundImage = '';
   profilePreview.style.backgroundImage = '';
+=======
+  namePreview.innerHTML = "Nombre y apellidos";
+  jobPreview.innerHTML = "Profesión";
+  emailLink.href = "";
+  linkedinPreview.href = "";
+  githubPreview.href = "";
+  iconPhone.href = "";
+  profileImage.style.backgroundImage = "";
+  profilePreview.style.backgroundImage = "";
+  // vaciar objeto
+  // llamar funcion render
+>>>>>>> angeles
 }
 
 resetButton.addEventListener('click', resetForm);
@@ -100,6 +113,7 @@ function renderPreviewCard() {
   } else {
     emailLink.href = `mailto:${data.email}`;
   }
+<<<<<<< HEAD
   if (data.linkedin === '') {
     linkedinPreview.href = '';
   } else {
@@ -107,8 +121,17 @@ function renderPreviewCard() {
   }
   if (data.github === '') {
     githubPreview.href = 'www.github.com/';
+=======
+  if (data.linkedin === "") {
+    linkedinPreview.href = "http://www.linkedin.com/";
   } else {
-    githubPreview.href = `www.github.com/${data.github}`;
+    linkedinPreview.href = data.linkedin;
+  }
+  if (data.github === "") {
+    githubPreview.href = "http://www.github.com/";
+>>>>>>> angeles
+  } else {
+    githubPreview.href = `http://www.github.com/${data.github}`;
   }
   if (data.phone === '') {
     iconPhone.href = '';
@@ -133,13 +156,13 @@ function getData(event) {
   // } else if (selectedInputId === "email") {
   //   data.email = selectedInputValue;
   // } else if (selectedInputId === "phone") {
-  //   let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
-  //   if (patternPhone.test(selectedInputValue)) {
-  //     data.phone = selectedInputValue;
-  //   } else {
-  //     event.currentTarget.title =
-  //       "Por favor, introduce un número de teléfono fijo o móvil de España";
-  //   }
+  // let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
+  // if (patternPhone.test(selectedInputValue)) {
+  //   data[selectedInputId] = selectedInputValue;
+  // } else {
+  //   event.currentTarget.title =
+  //     "Por favor, introduce un número de teléfono fijo o móvil de España";
+  // }
   // } else if (selectedInputId === "linkedin") {
   //   console.log(selectedInputValue);
   //   data.linkedin = selectedInputValue;
@@ -157,8 +180,19 @@ function getData(event) {
   renderPreviewCard();
 }
 
+// Guardar datos en LS
+function saveLocalStorage() {
+  // Para guardar un objeto necesitamos pasarlo a string
+  localStorage.setItem("userData", JSON.stringify(data));
+}
+
+function handleInputChange(event) {
+  getData(event);
+  saveLocalStorage();
+}
+
 for (const eachInput of allInputs) {
-  eachInput.addEventListener('change', getData);
+  eachInput.addEventListener("change", handleInputChange);
 }
 
 function handleCreateCard(event) {
