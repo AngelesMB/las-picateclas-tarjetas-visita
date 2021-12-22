@@ -69,7 +69,7 @@
       background-color: white;
       padding-top: 21px;
       height: 75px;
-      
+
       .name {
         height: 20px;
         width: 206px;
@@ -94,7 +94,7 @@
       }
     }
     &--img {
-      background-image: url("../images/Vilma.jpg");
+      background-image: url('../images/Vilma.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -290,6 +290,12 @@
         color: $dull-orange;
         text-decoration: none;
         text-align: center;
+        font-size: 12px;
+
+        @include tablet {
+          font-size: 15px;
+        }
+
         &:hover {
           text-decoration: underline;
         }
