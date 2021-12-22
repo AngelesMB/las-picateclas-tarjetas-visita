@@ -32,7 +32,6 @@ function resetForm(event) {
   for (const eachInput of allInputs) {
     eachInput.value = '';
   }
-<<<<<<< HEAD
   namePreview.innerHTML = 'Nombre y apellidos';
   jobPreview.innerHTML = 'Profesión';
   emailLink.href = '';
@@ -41,18 +40,6 @@ function resetForm(event) {
   iconPhone.href = '';
   profileImage.style.backgroundImage = '';
   profilePreview.style.backgroundImage = '';
-=======
-  namePreview.innerHTML = "Nombre y apellidos";
-  jobPreview.innerHTML = "Profesión";
-  emailLink.href = "";
-  linkedinPreview.href = "";
-  githubPreview.href = "";
-  iconPhone.href = "";
-  profileImage.style.backgroundImage = "";
-  profilePreview.style.backgroundImage = "";
-  // vaciar objeto
-  // llamar funcion render
->>>>>>> angeles
 }
 
 resetButton.addEventListener('click', resetForm);
@@ -113,7 +100,6 @@ function renderPreviewCard() {
   } else {
     emailLink.href = `mailto:${data.email}`;
   }
-<<<<<<< HEAD
   if (data.linkedin === '') {
     linkedinPreview.href = '';
   } else {
@@ -121,15 +107,6 @@ function renderPreviewCard() {
   }
   if (data.github === '') {
     githubPreview.href = 'www.github.com/';
-=======
-  if (data.linkedin === "") {
-    linkedinPreview.href = "http://www.linkedin.com/";
-  } else {
-    linkedinPreview.href = data.linkedin;
-  }
-  if (data.github === "") {
-    githubPreview.href = "http://www.github.com/";
->>>>>>> angeles
   } else {
     githubPreview.href = `http://www.github.com/${data.github}`;
   }
