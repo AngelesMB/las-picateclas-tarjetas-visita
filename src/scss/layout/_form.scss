@@ -94,7 +94,7 @@
       }
     }
     &--img {
-      background-image: url('../images/Vilma.jpg');
+      background-image: url("../images/Vilma.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -282,7 +282,7 @@
 
       & h4 {
         color: $gunmetal;
-        font-size: 24px;
+        font-size: 18px;
         margin-bottom: 9px;
         text-align: center;
       }
@@ -291,11 +291,6 @@
         text-decoration: none;
         text-align: center;
         font-size: 12px;
-
-        @include tablet {
-          font-size: 15px;
-        }
-
         &:hover {
           text-decoration: underline;
         }
