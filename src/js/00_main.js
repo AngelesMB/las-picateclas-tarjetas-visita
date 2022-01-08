@@ -271,29 +271,28 @@ function handleFieldsetClick(event) {
 
 // Almacenar en LocalStorage
 function saveLocalStorage() {
-  const localElementsStorage = JSON.stringify(data); 
+  const localElementsStorage = JSON.stringify(data);
   localStorage.setItem("user data", localElementsStorage);
 }
 function getLocalElements() {
-  const parseItem = localStorage.getItem("user data");
-  let localElements = JSON.parse(parseItem);
-  console.log(parseItem);
-  console.log(localElements);
-  if (parseItem !== null) {
-    data = localElements;
-    // changeColorPalette(event);
+  let savedItem = localStorage.getItem("user data");
+  if (savedItem !== null) {
+    let parsedItem = JSON.parse(savedItem);
+    savedItem = parsedItem;
+    console.log(savedItem);
+    data = savedItem;
     renderPreviewCard();
-    // renderInputs();
-    console.log("entra");
+    renderInputs();
   }
 }
 function renderInputs() {
-  for (const eachInput of allInputs) {
+  if (data !== null) {
     for (const key in data) {
-      if (eachInput.id === key) {
-        console.log("entra");
-        data.key = eachInput.value;
-        console.dir(eachInput);
+      const input = document.querySelector(`#${key}`);
+      if (key === "palette" || key === "photo") {
+        console.log("no hace nada");
+      } else {
+        input.value = data[key];
       }
     }
   }

@@ -366,7 +366,8 @@
     height: 30px;
     border: #a2deaf 1px solid;
     margin-left: 20px;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 
