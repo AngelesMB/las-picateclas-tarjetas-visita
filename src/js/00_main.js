@@ -138,40 +138,28 @@ function renderPreviewCard() {
 
 // Función para recoger el valor de los inputs y volcar al objeto data
 function getData(event) {
+  const selection = event.currentTarget;
   // Recogemos el valor que escribe la usuaria
   const selectedInputValue = event.currentTarget.value;
   // Obtenemos el id del input clickado (name, job...)
   const selectedInputId = event.currentTarget.id;
-  // Si la usuaria escribe en el input id name, vuelco el valor en el objeto data.name
-  // if (selectedInputId === "name") {
-  //   data.name = selectedInputValue;
-  // } else if (selectedInputId === "job") {
-  //   data.job = selectedInputValue;
-  // } else if (selectedInputId === "email") {
-  //   data.email = selectedInputValue;
-  // } else if (selectedInputId === "phone") {
-  //   let patternPhone = /^[6-7-9]{1}[0-9]{8}$/;
-  //   if (patternPhone.test(selectedInputValue)) {
-  //     data.phone = selectedInputValue;
-  //   } else {
-  //     event.currentTarget.title =
-  //       "Por favor, introduce un número de teléfono fijo o móvil de España";
-  //   }
-  // } else if (selectedInputId === "linkedin") {
-  //   console.log(selectedInputValue);
-  //   data.linkedin = selectedInputValue;
-  // } else if (selectedInputId === "github") {
-  //   console.log(selectedInputValue);
-  //   data.github = selectedInputValue;
-  // } else if (selectedInputId === "photo") {
-  //   data.photo = selectedInputValue;
-  // } else if (selectedInputId === "palette") {
-  //   data.palette = selectedInputValue;
-  // }
+  const selectedInputParent = selection.parentElement;
+  if (selectedInputId === "palette") {
+    console.log("entra");
+    if (selectedInputParent.classList.contains("second__color")) {
+      data.palette = 2;
+    } else if (selectedInputParent.classList.contains("first__color")) {
+      data.palette = 1;
+    } else {
+      data.palette = 3;
+    }
+  } else {
+    data[selectedInputId] = selectedInputValue;
+  }
 
-  data[selectedInputId] = selectedInputValue;
   console.log(data);
   renderPreviewCard();
+  saveLocalStorage();
 }
 
 for (const eachInput of allInputs) {
@@ -280,6 +268,38 @@ function handleFieldsetClick(event) {
   collapseFieldset(event);
   rotateArrows();
 }
+
+// Almacenar en LocalStorage
+function saveLocalStorage() {
+  const localElementsStorage = JSON.stringify(data); 
+  localStorage.setItem("user data", localElementsStorage);
+}
+function getLocalElements() {
+  const parseItem = localStorage.getItem("user data");
+  let localElements = JSON.parse(parseItem);
+  console.log(parseItem);
+  console.log(localElements);
+  if (parseItem !== null) {
+    data = localElements;
+    // changeColorPalette(event);
+    renderPreviewCard();
+    // renderInputs();
+    console.log("entra");
+  }
+}
+function renderInputs() {
+  for (const eachInput of allInputs) {
+    for (const key in data) {
+      if (eachInput.id === key) {
+        console.log("entra");
+        data.key = eachInput.value;
+        console.dir(eachInput);
+      }
+    }
+  }
+}
+
+getLocalElements();
 
 // Deshabilitar botón
 
