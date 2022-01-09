@@ -18,3 +18,12 @@
 [Alicia Gallego](https://github.com/aliciaggz)
 
 [Alejandra Mejía](https://github.com/AlejandraMejiaP)
+
+____________
+
+**Instalación**
+Instala el proyecto con npm
+```bash
+  npm install
+  npm start
+```
