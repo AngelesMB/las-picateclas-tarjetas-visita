@@ -37,6 +37,7 @@ function resetForm(event) {
   resetObject();
   renderPreviewCard();
   changeColorPalette(event);
+  saveLocalStorage();
 
   // Deshabilitar botón :
   shareButton.classList.add("unabled");
