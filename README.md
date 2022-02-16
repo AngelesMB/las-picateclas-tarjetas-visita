@@ -1,6 +1,6 @@
 # Las Picateclas presentan:  AWESOME PROFILE-CARDS.
 ## Crear tu tarjeta de presentación nunca fue tan fácil:
-1⃣ Elige tu diseño.
+1⃣ Elige un diseño.
 
 
 2⃣ Rellena con tus datos.
